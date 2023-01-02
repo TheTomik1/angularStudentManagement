@@ -13,7 +13,12 @@
             id="passwordField"
           /><br />
           <div class="text-center">
-            <button id="loginbutton" class="btn btn-primary" width="20px">
+            <button
+              (click)="verifyLogin()"
+              id="loginbutton"
+              class="btn btn-primary"
+              width="20px"
+            >
               Login
             </button>
           </div>
@@ -22,3 +27,5 @@
     </div>
   </div>
 </div>
+
+<p>{{ boolValue }}</p>

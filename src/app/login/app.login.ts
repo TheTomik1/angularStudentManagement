@@ -6,5 +6,12 @@ import { Component, VERSION } from '@angular/core';
   styleUrls: ['./app.login.css'],
 })
 export class LoginPage {
-  name = 'Angular ' + VERSION.major;
+  boolValue: boolean = false;
+  val: Object = {};
+
+  verifyLogin(): void {
+    fetch('../users.json')
+      .then((res) => res.json())
+      .then(); // do something with data
+  }
 }
