@@ -8,10 +8,10 @@ import data from '../users.json';
   styleUrls: ['./app.login.css'],
 })
 export class LoginPage {
-  boolValue: boolean = false;
+  loginNickname: string = '';
   json: any = data;
 
   verifyLogin(): void {
-    this.boolValue = !this.boolValue;
+
   }
 }

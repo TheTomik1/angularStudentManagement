@@ -6,5 +6,5 @@ import { Component, VERSION } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  currentUser: string = 'Currently not logged in';
+  currentUser: string = `Currently not logged in`;
 }

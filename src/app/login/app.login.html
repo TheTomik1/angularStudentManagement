@@ -4,8 +4,13 @@
       <div class="text-center">
         <h4 class="card-title">Login Form</h4>
         <div>
-          <label for="emailField" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="emailField" />
+          <label
+            for="nicknameField"
+            [(ngModel)]="loginNickname"
+            class="form-label"
+            >Nickname</label
+          >
+          <input type="text" class="form-control" id="nicknameField" />
           <label for="passwordField" class="form-label">Password</label>
           <input
             type="password"
@@ -28,4 +33,4 @@
   </div>
 </div>
 
-<p>{{ json }}</p>
+<p>{{ loginNickname }}</p>
