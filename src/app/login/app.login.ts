@@ -1,4 +1,6 @@
-import { Component, VERSION } from '@angular/core';
+import { Component } from '@angular/core';
+
+import data from '../users.json';
 
 @Component({
   selector: 'login-page',
@@ -7,10 +9,9 @@ import { Component, VERSION } from '@angular/core';
 })
 export class LoginPage {
   boolValue: boolean = false;
-  logOutHandler: string = 'nav-item nav-link';
+  json: any = data;
 
   verifyLogin(): void {
     this.boolValue = !this.boolValue;
-    this.logOutHandler = 'nav-link disabled';
   }
 }
