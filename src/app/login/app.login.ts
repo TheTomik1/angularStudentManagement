@@ -7,11 +7,10 @@ import { Component, VERSION } from '@angular/core';
 })
 export class LoginPage {
   boolValue: boolean = false;
-  val: Object = {};
+  logOutHandler: string = 'nav-item nav-link';
 
   verifyLogin(): void {
-    fetch('../users.json')
-      .then((res) => res.json())
-      .then(); // do something with data
+    this.boolValue = !this.boolValue;
+    this.logOutHandler = 'nav-link disabled';
   }
 }
