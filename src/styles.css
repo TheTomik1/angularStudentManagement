@@ -1,1 +1,10 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
+
+html {
+  background: url(https://images2.alphacoders.com/720/720843.jpg) no-repeat
+    center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
