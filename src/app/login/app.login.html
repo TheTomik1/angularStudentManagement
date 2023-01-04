@@ -4,33 +4,15 @@
       <div class="text-center">
         <h4 class="card-title">Login Form</h4>
         <div>
-          <label
-            for="nicknameField"
-            [(ngModel)]="loginNickname"
-            class="form-label"
-            >Nickname</label
-          >
-          <input type="text" class="form-control" id="nicknameField" />
+          <label for="nicknameField" class="form-label">Nickname</label>
+          <input id="nicknameField" type="text" class="form-control" [(ngModel)]="userNickname"/>
           <label for="passwordField" class="form-label">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            id="passwordField"
-          /><br />
+          <input id="passwordField" type="password" class="form-control" [(ngModel)]="userPassword"/><br/>
           <div class="text-center">
-            <button
-              (click)="verifyLogin()"
-              id="loginbutton"
-              class="btn btn-primary"
-              width="20px"
-            >
-              Login
-            </button>
+            <button id="loginbutton" (click)="verifyLogin()" class="btn btn-primary" width="20px">Login</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
-<p>{{ loginNickname }}</p>
