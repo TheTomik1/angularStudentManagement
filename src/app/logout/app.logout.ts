@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,9 +9,12 @@ import { Router } from '@angular/router';
 export class LogoutPage {
   constructor(private router: Router) {}
 
+  logOutSuccessful: boolean = false;
+
   logOutAgreed(agreedStatus: boolean): void {
     if (agreedStatus == true) {
-      this.router.navigate([]);
+      this.router.navigate(['']);
+      this.logOutSuccessful = true;
     } else if (agreedStatus == false) {
       this.router.navigate([]);
     }

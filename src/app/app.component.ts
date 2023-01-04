@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  loginPressed = false;
   handleLoginPage: string = 'nav-item nav-link';
   handleLogOutPage: string = 'nav-item nav-link disabled';
 
