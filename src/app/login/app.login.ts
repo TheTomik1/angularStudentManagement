@@ -19,7 +19,6 @@ export class LoginPage {
     this.userLogged.emit(statusValue);
   }
 
-
   constructor(private router: Router) {}
 
   sendToUserPage(getUserName: string): void {
