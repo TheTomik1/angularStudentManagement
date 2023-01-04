@@ -12,13 +12,18 @@ export class LoginPage {
   userEmail: string = '';
   userPassword: string = '';
   userNickname: string = '';
-  userLogged = false;
   userJson: any = data;
+
+  @Output() userLogged = new EventEmitter<boolean>();
+  public pickDate(statusValue: boolean): void {
+    this.userLogged.emit(statusValue);
+  }
+
 
   constructor(private router: Router) {}
 
   sendToUserPage(getUserName: string): void {
-    this.router.navigate(["user", getUserName])
+    this.router.navigate(['user', getUserName]);
   }
 
   verifyLogin(): void {
@@ -32,6 +37,7 @@ export class LoginPage {
         if (this.userPassword == this.userJson[user][0]) {
           this.userNickname = this.userJson[user][1];
           this.sendToUserPage(this.userNickname);
+          this.pickDate(true);
         }
       }
     });
