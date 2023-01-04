@@ -3,21 +3,8 @@
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
       <div class="navbar-nav">
-        <a
-          class="nav-item nav-link"
-          routerLink="/login"
-          routerLinkActive="active"
-          >Login</a
-        >
-        <a
-          class="nav-item nav-link"
-          routerLink="/logout"
-          routerLinkActive="active"
-          >Logout</a
-        >
-        <a class="nav-item nav-link" style="position:absolute;right:0">{{
-          currentUser
-        }}</a>
+        <a class="nav-item nav-link" routerLink="/login"routerLinkActive="active">Login</a>
+        <a class="nav-item nav-link disabled" routerLink="/logout" routerLinkActive="active">Logout</a>
       </div>
     </ul>
   </div>
