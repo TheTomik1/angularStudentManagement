@@ -1,3 +1,8 @@
 {
-  "Tomas": ["Setnicky", "3.B", "Programming"]
+  "1": {
+    "firstName": "Tomas",
+    "lastName": "Setnicky",
+    "class": "3.B",
+    "field": "Programming"
+  }
 }
