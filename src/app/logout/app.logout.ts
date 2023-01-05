@@ -1,22 +1,24 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { AppComponent } from '../app.component';
+
 @Component({
   selector: 'logout-page',
   templateUrl: './app.logout.html',
   styleUrls: ['./app.logout.css'],
 })
 export class LogoutPage {
-  constructor(private router: Router) {}
+  constructor(private AppComponent: AppComponent ,private router: Router) {}
 
-  logOutSuccessful: boolean = false;
-
-  logOutAgreed(agreedStatus: boolean): void {
+  processLogOut(agreedStatus: boolean): void {
     if (agreedStatus == true) {
       this.router.navigate(['']);
-      this.logOutSuccessful = true;
+      this.AppComponent.handleLogOutPage = "nav-item nav-link disabled";
+      this.AppComponent.userStatus = "Currently you are not logged in";
+      this.AppComponent.loginFormView = true;
     } else if (agreedStatus == false) {
-      this.router.navigate([]);
+      this.router.navigate(["user", this.AppComponent.userNickname]);
     }
   }
 }

@@ -10,6 +10,7 @@ import { UserPage } from './userpage/app.userpage';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule],
+  providers: [AppComponent],
   declarations: [AppComponent, HelloComponent, LogoutPage, UserPage],
   bootstrap: [AppComponent],
 })
