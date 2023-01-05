@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LogoutPage } from './logout/app.logout';
-import { UserPage } from './userpage/app.userpage';
+import { LogoutPage } from './logOutPage/app.logout';
+import { UserPage } from './userPage/app.userpage';
+import { ViewStudentsPage } from './viewStudentsPage/app.view.students';
 
 const routes: Routes = [
   { path: 'logout', component: LogoutPage },
   { path: 'user/:id', component: UserPage },
+  { path: "viewstudents", component: ViewStudentsPage }
 ];
 
 @NgModule({
