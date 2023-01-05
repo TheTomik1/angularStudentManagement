@@ -11,6 +11,10 @@
   }
 }
 
+.loggedInClass {
+  text-align: "center";
+}
+
 p {
   font-family: Lato;
 }

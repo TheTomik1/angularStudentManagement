@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import data from './users.json';
+import userData from './users.json';
 
 @Component({
   selector: 'my-app',
@@ -13,13 +13,18 @@ export class AppComponent {
   userEmail: string = '';
   userPassword: string = '';
   userNickname: string = '';
-  userLogged = false;
-  userJson: any = data;
+  userStatus: string = "Currently you are not logged in";
+  loginFormView: boolean = true;
+  usersJson: any = userData;
 
   constructor(private router: Router) {}
 
   sendToUserPage(getUserName: string): void {
     this.router.navigate(['user', getUserName]);
+  }
+
+  handleFormView(): void {
+    this.loginFormView = !this.loginFormView;
   }
 
   verifyLoginForm(): void {
@@ -28,13 +33,14 @@ export class AppComponent {
     if (this.userPassword.length == 0) {
     }
 
-    Object.keys(this.userJson).forEach((user) => {
+    Object.keys(this.usersJson).forEach((user) => {
       if (user == this.userEmail) {
-        if (this.userPassword == this.userJson[user][0]) {
-          this.userNickname = this.userJson[user][1];
+        if (this.userPassword == this.usersJson[user][0]) {
+          this.userNickname = this.usersJson[user][1];
           this.sendToUserPage(this.userNickname);
           this.handleLogOutPage = 'nav-item nav-link';
-          this.userLogged = true;
+          this.userStatus = `Logged in as: ${this.userNickname}`;
+          this.handleFormView();
         }
       }
     });
