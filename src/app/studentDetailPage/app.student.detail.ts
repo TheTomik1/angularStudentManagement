@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import studentJson from '../students.json';
 
@@ -8,12 +8,5 @@ import studentJson from '../students.json';
   styleUrls: ['./app.student.detail.css'],
 })
 export class StudentDetailPage {
-  studentData: any = studentJson;
-
-  studentDetail = [
-    {
-      "first": "Tomas"
-    }
-  ]
-
+    studentData: any = studentJson;
 }
