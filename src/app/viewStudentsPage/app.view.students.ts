@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import studentJson from '../students.json';
 
 interface Student {
-  id: Number,
   firstName: String;
   lastName: String;
   class: String;

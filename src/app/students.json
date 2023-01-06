@@ -1,20 +1,17 @@
 [
   {
-    "id": 1,
     "firstName": "Tomas",
     "lastName": "Setnicky",
     "class": "3.B",
     "field": "Programming"
   },
   {
-    "id": 2,
     "firstName": "Marcus",
     "lastName": "Moravec",
     "class": "3.B",
     "field": "Networking"
   },
   {
-    "id": 3,
     "firstName": "test",
     "lastName": "yeet",
     "class": "2.B",

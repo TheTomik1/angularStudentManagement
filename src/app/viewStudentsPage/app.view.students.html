@@ -2,7 +2,6 @@
   <table id="studentTable" class="table table-light">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
       <th scope="col">Class</th>
@@ -12,12 +11,11 @@
   </thead>
   <tbody>
     <tr *ngFor="let student of students">
-      <th scope="row">{{ student.id }}</th>
       <td>{{ student.firstName }}</td>
       <td>{{ student.lastName }}</td>
       <td>{{ student.class }}</td>
       <td>{{ student.field }}</td>
-      <td><a [routerLink]="['/viewstudentdetail']" [queryParams]="{ id: student.id }">Details</a></td>
+      <td><a [routerLink]="['/viewstudentdetail']" [queryParams]="{ lastname: student.lastName }">Details</a></td>
     </tr>
   </tbody>
   </table>
