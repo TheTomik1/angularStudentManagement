@@ -9,4 +9,11 @@ import userData from './users.json';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {}
+export class AppComponent {
+  constructor(private LoginPage: LoginPage) {}
+
+  handleLoginPage = this.LoginPage.handleLoginPage;
+  handleLogOutPage = this.LoginPage.handleLogOutPage;
+  userNickname = this.LoginPage.userNickname;
+  userStatus = this.LoginPage.userStatus;
+}

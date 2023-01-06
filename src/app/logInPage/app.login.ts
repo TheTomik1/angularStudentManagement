@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AppComponent } from '../app.component';
-
 import userData from '../users.json';
 
 @Component({
@@ -11,7 +9,7 @@ import userData from '../users.json';
   styleUrls: ['./app.login.css'],
 })
 export class LoginPage {
-  constructor(private AppComponent: AppComponent ,private router: Router) {}
+  constructor(private router: Router) {}
 
   userEmail: string = '';
   userPassword: string = '';
