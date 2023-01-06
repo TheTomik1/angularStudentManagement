@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { LoginPage } from '../logInPage/app.login';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'user-page',
@@ -9,7 +9,7 @@ import { LoginPage } from '../logInPage/app.login';
   styleUrls: ['./app.userpage.css'],
 })
 export class UserPage {
-  constructor(private LoginPage: LoginPage, private router: Router) {}
+  constructor(private appComponent: AppComponent, private router: Router) {}
 
-  getUserNickname = this.LoginPage.userNickname;
+  getUserNickname = this.appComponent.userNickname;
 }

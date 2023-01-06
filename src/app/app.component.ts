@@ -14,7 +14,6 @@ export class AppComponent {
   userEmail: string = '';
   userPassword: string = '';
   userNickname: string = '';
-  handleLoginPage: string = 'nav-item nav-link';
   handleLogOutPage: string = 'nav-item nav-link disabled';
   userStatus: string = "Currently you are not logged in";
   loginFormView: boolean = true;
@@ -39,7 +38,6 @@ export class AppComponent {
         if (this.userPassword == this.usersJson[user][0]) {
           this.userNickname = this.usersJson[user][1];
           this.sendToUserPage(this.userNickname);
-          this.handleLoginPage = 'nav-item nav-link disabled';
           this.handleLogOutPage = 'nav-item nav-link';
           this.userStatus = `Logged in as: ${this.userNickname}`;
           this.handleFormView();
