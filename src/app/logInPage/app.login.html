@@ -1,0 +1,18 @@
+<div *ngIf="loginFormView==true" class="position-absolute top-50 start-50 translate-middle">
+<div id="logincard" class="card mx-auto" style="width: 20rem">
+  <div class="card-body">
+    <div class="text-center">
+      <h4 class="card-title">Login Form</h4>
+      <div>
+        <label for="emailField" class="form-label">Email Address</label>
+        <input id="emailField" type="email" class="form-control" [(ngModel)]="userEmail"/>
+        <label for="passwordField" class="form-label">Password</label>
+        <input id="passwordField" type="password" class="form-control" [(ngModel)]="userPassword"/><br/>
+        <div class="text-center">
+          <button id="loginbutton" (click)="verifyLoginForm()" class="btn btn-primary" width="20px"><a routerLink="/login" routerLinkActive="active"></a>Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

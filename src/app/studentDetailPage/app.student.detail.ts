@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 
-import studentJson from '../students.json';
+import { ActivatedRoute } from '@angular/router';
 
+import studentJson from '../students.json';
 
 @Component({
   selector: 'student-detail-page',
@@ -9,9 +10,8 @@ import studentJson from '../students.json';
   styleUrls: ['./app.student.detail.css'],
 })
 export class StudentDetailPage {
-    studentData: any = studentJson;
-
-    getStudent(): void {
-      console.log(this.studentData)
-    }
+    constructor(private route: ActivatedRoute) {}
+    getStudentId = this.route.snapshot.queryParams.id-1; // Lowering by 1 required here due to indexing below.
+    studentData: Object = studentJson[this.getStudentId];
 }
+

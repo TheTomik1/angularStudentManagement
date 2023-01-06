@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AppComponent } from '../app.component';
+import { LoginPage } from '../logInPage/app.login';
 
 @Component({
   selector: 'logout-page',
@@ -9,16 +9,16 @@ import { AppComponent } from '../app.component';
   styleUrls: ['./app.logout.css'],
 })
 export class LogoutPage {
-  constructor(private AppComponent: AppComponent ,private router: Router) {}
+  constructor(private LoginPage: LoginPage ,private router: Router) {}
 
   processLogOut(agreedStatus: boolean): void {
     if (agreedStatus == true) {
       this.router.navigate(['']);
-      this.AppComponent.handleLogOutPage = "nav-item nav-link disabled";
-      this.AppComponent.userStatus = "Currently you are not logged in";
-      this.AppComponent.loginFormView = true;
+      this.LoginPage.handleLogOutPage = "nav-item nav-link disabled";
+      this.LoginPage.userStatus = "Currently you are not logged in";
+      this.LoginPage.loginFormView = true;
     } else if (agreedStatus == false) {
-      this.router.navigate(["user", this.AppComponent.userNickname]);
+      this.router.navigate(["user", this.LoginPage.userNickname]);
     }
   }
 }
