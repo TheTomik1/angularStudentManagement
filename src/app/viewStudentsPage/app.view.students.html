@@ -15,7 +15,7 @@
       <td>{{ student.lastName }}</td>
       <td>{{ student.class }}</td>
       <td>{{ student.field }}</td>
-      <td><a [routerLink]="['/viewstudentdetail']" [queryParams]="{ lastname: student.lastName }">Details</a></td>
+      <td><a routerLink="/viewstudentdetail" routerLinkActive="active">Details</a></td>
     </tr>
   </tbody>
   </table>

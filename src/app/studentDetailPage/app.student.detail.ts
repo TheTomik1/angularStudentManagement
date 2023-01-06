@@ -10,8 +10,7 @@ import studentJson from '../students.json';
   styleUrls: ['./app.student.detail.css'],
 })
 export class StudentDetailPage {
-    constructor(private route: ActivatedRoute) {}
-    getStudentLastName = this.route.snapshot.queryParams.lastname;
-    studentData: Object = studentJson[this.getStudentLastName].firstName;
+  constructor(private route: ActivatedRoute) {}
+  getStudentLastName = this.route.snapshot.queryParams.lastname;
+  studentData: Object = studentJson[this.getStudentLastName].firstName;
 }
-
