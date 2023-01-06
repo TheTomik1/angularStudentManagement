@@ -11,35 +11,15 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td><a [routerLink]="['/viewstudentdetail']" [queryParams]="{name: 'tomassetnicky' }">Detail</a></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+    <tr *ngFor="let student of students">
+      <th scope="row">{{ student.id }}</th>
+      <td>{{ student.firstName }}</td>
+      <td>{{ student.lastName }}</td>
+      <td>{{ student.class }}</td>
+      <td>{{ student.field }}</td>
+      <td><a [routerLink]="['/viewstudentdetail']" [queryParams]="{ id: student.id }">Details</a></td>
     </tr>
   </tbody>
   </table>
 </div>
-
-<ul>
-<li>sdadsaasd</li>
-</ul>
 

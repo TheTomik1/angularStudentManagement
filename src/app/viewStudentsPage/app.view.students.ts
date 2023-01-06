@@ -1,6 +1,14 @@
 import { Component } from '@angular/core';
 
-import studentData from '../students.json';
+import studentJson from '../students.json';
+
+interface Student {
+  id: Number,
+  firstName: String;
+  lastName: String;
+  class: String;
+  field: String;
+}
 
 @Component({
   selector: 'view-students-page',
@@ -8,5 +16,5 @@ import studentData from '../students.json';
   styleUrls: ['./app.view.students.css'],
 })
 export class ViewStudentsPage {
-  studentsJson: any = studentData;
+  students: Student[] = studentJson;
 }

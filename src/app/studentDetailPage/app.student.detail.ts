@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import studentJson from '../students.json';
+
 
 @Component({
   selector: 'student-detail-page',
@@ -9,4 +10,8 @@ import studentJson from '../students.json';
 })
 export class StudentDetailPage {
     studentData: any = studentJson;
+
+    getStudent(): void {
+      console.log(this.studentData)
+    }
 }
