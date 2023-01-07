@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-
-import { LocalStorage } from '../localStorage';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'view-students-page',
@@ -8,7 +7,8 @@ import { LocalStorage } from '../localStorage';
   styleUrls: ['./app.view.students.css'],
 })
 export class ViewStudentsPage {
-  public constructor(private localStorage: LocalStorage) {}
+  constructor(private router: Router) {}
+
 
   getAllStudents(): Array<string> {
     let students = [];
@@ -16,11 +16,15 @@ export class ViewStudentsPage {
     for (var i = 0; i < localStorage.length; i++) {
       var key = localStorage.key(i);
       var value = localStorage.getItem(key);
-      if (key.length == 1) {
+      if (key.length == 1) { 
         students.push(value.split(","));
       }    
     }
     return students;
+  }
+
+  redirectToDetail(getFirstName: string, getLastName: string): void {
+    this.router.navigate(["viewstudentdetail", getFirstName, getLastName]);
   }
 
   allStudents: Array<string> = this.getAllStudents();
