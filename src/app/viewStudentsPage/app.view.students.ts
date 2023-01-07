@@ -15,9 +15,10 @@ export class ViewStudentsPage {
 
     for (var i = 0; i < localStorage.length; i++) {
       var key = localStorage.key(i);
-      var value = localStorage.getItem(key);
+      var value = localStorage.getItem(key).split(",");
       if (key.length == 1) { 
-        students.push(value.split(","));
+        console.log([key.toString()].concat(value))
+        students.push([key.toString()].concat(value));
       }    
     }
     return students;
