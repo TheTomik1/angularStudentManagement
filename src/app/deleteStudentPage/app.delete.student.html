@@ -27,7 +27,7 @@
       <div>
         <p class="card-text">You are about to delete {{ firstNameValue }} {{ lastNameValue }} from the system. Are you sure you want to proceed?</p>
         <div class="text-center">
-          <a routerLink="/viewstudentdetail" routerLinkActive="active"><button id="yesbutton" (click)="deleteStudent(findStudent())" class="btn btn-danger" width="20px">Yes</button></a>
+          <button id="yesbutton" (click)="deleteStudent(findStudent())" class="btn btn-danger" width="20px">Yes</button>
           <button id="nobutton" (click)="handleCard()" class="btn btn-success" width="20px">No</button>
         </div>
       </div>

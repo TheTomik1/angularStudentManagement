@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { LocalStorage } from '../localStorage';
 
@@ -8,7 +9,7 @@ import { LocalStorage } from '../localStorage';
   styleUrls: ['./app.delete.student.css'],
 })
 export class DeleteStudentPage {
-  constructor(private localStorage: LocalStorage) {}
+  constructor(private router: Router, private localStorage: LocalStorage) {}
 
   firstNameValue: string = "";
   lastNameValue: string = "";
@@ -36,6 +37,7 @@ export class DeleteStudentPage {
 
   deleteStudent(key: string): void {
       this.localStorage.removeData(key);
-      this.statusMessage = "";  
+      this.statusMessage = "";
+      this.router.navigate(["viewstudents"]);
   }
 }
