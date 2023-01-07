@@ -9,12 +9,6 @@ import { LocalStorage } from '../localStorage';
   styleUrls: ['./app.student.detail.css'],
 })
 export class StudentDetailPage {
-  constructor(
-    private localStorage: LocalStorage,
-    private router: Router,
-    private route: ActivatedRoute
-  ) {}
+  constructor(private localStorage: LocalStorage, private router: Router, private route: ActivatedRoute) {}
 
-  getFirstName: string = this.route.snapshot.queryParams.firstname;
-  getLastName: string = this.route.snapshot.queryParams.lastname;
 }

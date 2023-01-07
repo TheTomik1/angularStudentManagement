@@ -23,8 +23,8 @@ export class ViewStudentsPage {
     return students;
   }
 
-  redirectToDetail(getFirstName: string, getLastName: string): void {
-    this.router.navigate(['viewstudentdetail'], {queryParams: { firstname: getFirstName, lastname: getLastName }});
+  redirectToDetail(getKey: string): void {
+    this.router.navigate(['viewstudentdetail'], {queryParams: { id: getFirstName }});
   }
 
   allStudents: Array<string> = this.getAllStudents();
