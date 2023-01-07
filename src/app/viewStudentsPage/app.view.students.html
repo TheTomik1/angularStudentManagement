@@ -1,6 +1,6 @@
-<div>
-  <table id="studentTable" class="table table-light">
-  <thead>
+<div id="studentTable">
+  <table class="table">
+  <thead class="table-dark">
     <tr>
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
@@ -9,7 +9,7 @@
       <th scope="col">Details</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="table-light">
     <tr *ngFor="let student of allStudents">
       <td>{{ student["0"] }}</td>
       <td>{{ student["1"] }}</td>
