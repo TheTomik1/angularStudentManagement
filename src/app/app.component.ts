@@ -16,7 +16,7 @@ export class AppComponent {
   userNickname: string = '';
   handleLogOutPage: string = 'nav-item nav-link disabled';
   userStatus: string = 'Currently you are not logged in';
-  loginFormView: boolean = true;
+  loginFormView: boolean = false;
 
   sendToUserPage(getUserName: string): void {
     this.router.navigate(['user', getUserName]);
