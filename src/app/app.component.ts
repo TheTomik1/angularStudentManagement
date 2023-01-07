@@ -33,10 +33,6 @@ export class AppComponent {
     }
 
     const getUserData = this.localStorage.getData(this.userEmail).split(',');
-
-    // this.localStorage.setData("1", "Tomas,Setnicky,3.B, Programming");
-    console.log(this.localStorage.getData('1').split(','));
-
     if (getUserData[0] == this.userPassword) {
       this.handleLogOutPage = 'nav-item nav-link';
       this.userNickname = getUserData[1];

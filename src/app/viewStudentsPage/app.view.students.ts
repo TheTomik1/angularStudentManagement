@@ -10,17 +10,18 @@ import { LocalStorage } from '../localStorage';
 export class ViewStudentsPage {
   public constructor(private localStorage: LocalStorage) {}
 
-  students = [];
-
   getAllStudents(): Array<string> {
+    let students = [];
+
     for (var i = 0; i < localStorage.length; i++) {
       var key = localStorage.key(i);
       var value = localStorage.getItem(key);
-      if (key == "1") {
-        this.students.push(value.split(","))
+      if (key.length == 1) {
+        students.push(value.split(","));
       }    
     }
-    console.log(this.students)
-    return this.students;
+    return students;
   }
+
+  allStudents: Array<string> = this.getAllStudents();
 }
