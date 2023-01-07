@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 
 import { ActivatedRoute } from '@angular/router';
-
-import studentJson from '../students.json';
+import { LocalStorage } from '../localStorage';
 
 @Component({
   selector: 'student-detail-page',
@@ -10,7 +9,7 @@ import studentJson from '../students.json';
   styleUrls: ['./app.student.detail.css'],
 })
 export class StudentDetailPage {
-  constructor(private route: ActivatedRoute) {}
-  getStudentLastName = this.route.snapshot.queryParams.lastname;
-  studentData: Object = studentJson[this.getStudentLastName].firstName;
+  constructor(private localStorage: LocalStorage, private route: ActivatedRoute) {}
+
+  
 }
