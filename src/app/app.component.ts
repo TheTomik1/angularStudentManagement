@@ -27,8 +27,8 @@ export class AppComponent {
   }
 
   verifyLoginForm(): void {
-    this.localStorage.setData("1", "Tomas,Setnicky,3.B,Programming");
-    this.localStorage.setData("2", "Marcus,Moravec,3.A,Networking")
+    // this.localStorage.setData("1", "Tomas,Setnicky,3.B,Programming");
+    // this.localStorage.setData("2", "Marcus,Moravec,3.A,Networking")
     // this.localStorage.setData("3", "Maria,Dobrá,4.B,Articial Inteligence");
 
     if (this.userEmail.length == 0) {
