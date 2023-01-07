@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LocalStorage } from '../localStorage';
 
 @Component({
@@ -9,7 +9,12 @@ import { LocalStorage } from '../localStorage';
   styleUrls: ['./app.student.detail.css'],
 })
 export class StudentDetailPage {
-  constructor(private localStorage: LocalStorage, private route: ActivatedRoute) {}
+  constructor(
+    private localStorage: LocalStorage,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
-  
+  getFirstName: string = this.route.snapshot.queryParams.firstname;
+  getLastName: string = this.route.snapshot.queryParams.lastname;
 }
