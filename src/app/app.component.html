@@ -5,6 +5,7 @@
     <div class="navbar-nav">
       <a class="{{ handleLogOutPage }}" routerLink="/logout" routerLinkActive="active">Logout</a>
       <a class="nav-item nav-link" routerLink="/user/" routerLinkActive="active" style="position:absolute;right:0"></a>
+      <a class="nav-item nav-link" routerLink="/user/{{ userNickname }}" routerLinkActive="active" style="position:absolute;right:0">{{ userStatus }}</a>
     </div>
   </ul>
 </div>
@@ -21,7 +22,7 @@
           <label for="passwordField" class="form-label">Password</label>
           <input id="passwordField" type="password" class="form-control" [(ngModel)]="userPassword"/><br/>
           <div class="text-center">
-            <button id="loginbutton" (click)="verifyLoginForm()" class="btn btn-primary" width="20px"><a routerLink="/logout" routerLinkActive="active"></a>Login</button>
+            <button id="loginbutton" (click)="verifyLoginForm()" class="btn btn-primary" width="20px">Login</button>
           </div>
         </div>
       </div>

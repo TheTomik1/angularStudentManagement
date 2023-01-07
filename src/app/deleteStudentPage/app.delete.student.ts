@@ -24,7 +24,7 @@ export class DeleteStudentPage {
       var key = localStorage.key(i);
       var value = localStorage.getItem(key).split(",");
       if (key.length == 1) {
-        if (value[0] == this.firstNameValue && value[1] == this.lastNameValue) {
+        if (value[0] == this.firstNameValue.trim() && value[1] == this.lastNameValue.trim()) {
           this.handleCard();
           return key;
         }
