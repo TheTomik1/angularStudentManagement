@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'logout', component: LogoutPage },
   { path: 'user/:id', component: UserPage },
   { path: 'viewstudents', component: ViewStudentsPage },
-  { path: 'viewstudentdetail/:firstName/:lastName', component: StudentDetailPage },
+  { path: 'viewstudentdetail', component: StudentDetailPage },
   { path: 'deletestudent', component: DeleteStudentPage }
 ];
 

@@ -24,7 +24,7 @@ export class ViewStudentsPage {
   }
 
   redirectToDetail(getFirstName: string, getLastName: string): void {
-    this.router.navigate(["viewstudentdetail", getFirstName, getLastName]);
+    this.router.navigate(['viewstudentdetail'], {queryParams: { firstname: getFirstName.toLowerCase(), lastname: getLastName.toLowerCase() }});
   }
 
   allStudents: Array<string> = this.getAllStudents();
