@@ -4,9 +4,36 @@
     <div class="text-center">
       <h4 class="card-title">Name</h4>
       <p class="card-text">Here you can see all the detailed information about this student.</p>
-      <ul *ngFor="let information of getStudentInfo(getStudentId)">
-        <li>{{ information }}</li>
-      </ul>
+      
+      <h6 class="card-title">Name</h6>
+      <p class="card-text">{{ getStudentInfo(getStudentId)[0] }} {{ getStudentInfo(getStudentId)[1] }}</p>
+      
+      <h6 class="card-title">Class</h6>
+      <p class="card-text">{{ getStudentInfo(getStudentId)[2] }}</p>
+
+      <h6 class="card-title">Age</h6>
+      <p class="card-text"></p>
+      
+      <h6 class="card-title">Birthday date</h6>
+      <p class="card-text"></p>
+
+      <h6 class="card-title">Field</h6>
+      <p class="card-text">{{ getStudentInfo(getStudentId)[3] }}</p>
+      
+      <h6 class="card-title">Gender</h6>
+      <p class="card-text"></p>
+
+      <h6 class="card-title">Percentage (GPA)</h6>
+      <p class="card-text"></p>
+      
+      <h6 class="card-title">Disabled</h6>
+      <p class="card-text"></p>
+
+      <h6 class="card-title">Rewards</h6>
+      <p class="card-text"></p>
+
+      <h6 class="card-title">Latest edit</h6>
+      <p class="card-text"></p>
     </div>
   </div>
 </div>
