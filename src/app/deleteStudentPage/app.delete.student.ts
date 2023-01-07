@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.delete.student.css'],
 })
 export class DeleteStudentPage {
+  firstNameValue: string = "";
+  lastNameValue: string = "";
 
+  deleteStudent: void {
+    
+  }
 }
