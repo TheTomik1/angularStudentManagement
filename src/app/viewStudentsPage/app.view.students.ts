@@ -1,13 +1,6 @@
 import { Component } from '@angular/core';
 
-import studentJson from '../students.json';
-
-interface Student {
-  firstName: String;
-  lastName: String;
-  class: String;
-  field: String;
-}
+import { LocalStorage } from '../localStorage';
 
 @Component({
   selector: 'view-students-page',
@@ -15,5 +8,19 @@ interface Student {
   styleUrls: ['./app.view.students.css'],
 })
 export class ViewStudentsPage {
-  students: Student[] = studentJson;
+  public constructor(private localStorage: LocalStorage) {}
+
+  students = [];
+
+  getAllStudents(): Array<string> {
+    for (var i = 0; i < localStorage.length; i++) {
+      var key = localStorage.key(i);
+      var value = localStorage.getItem(key);
+      if (key == "1") {
+        this.students.push(value.split(","))
+      }    
+    }
+    console.log(this.students)
+    return this.students;
+  }
 }
