@@ -11,4 +11,17 @@ import { LocalStorage } from '../localStorage';
 export class StudentDetailPage {
   constructor(private localStorage: LocalStorage, private router: Router, private route: ActivatedRoute) {}
 
+  getStudentId = this.route.snapshot.queryParams.id;
+
+  getStudentInfo(studentId: string): Array<string> {
+    let value = [];
+
+    for (var i = 0; i < localStorage.length; i++) {
+      var key = localStorage.key(i);
+      if (key == studentId) { 
+        value = localStorage.getItem(key).split(",");
+      }    
+    }
+    return value;
+  }
 }

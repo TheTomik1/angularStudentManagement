@@ -4,6 +4,9 @@
     <div class="text-center">
       <h4 class="card-title">Name</h4>
       <p class="card-text">Here you can see all the detailed information about this student.</p>
+      <ul *ngFor="let information of getStudentInfo(getStudentId)">
+        <li>{{ information }}</li>
+      </ul>
     </div>
   </div>
 </div>
