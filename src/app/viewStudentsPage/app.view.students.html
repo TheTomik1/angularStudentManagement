@@ -15,7 +15,7 @@
       <td>{{ student["1"] }}</td>
       <td>{{ student["2"] }}</td>
       <td>{{ student["3"] }}</td>
-      <td><a routerLink="/viewstudentdetail" routerLinkActive="active">Details</a></td>
+      <td><a [routerLink]="['viewstudentdetail']" [queryParams]="{ firstname: student['0'], lastname: student['1'] }">Details</a></td>
     </tr>
   </tbody>
   </table>
