@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'view-students-page',
+  selector: 'students-view-page',
   templateUrl: './app.view.students.html',
   styleUrls: ['./app.view.students.css'],
 })
