@@ -6,9 +6,9 @@ import { LocalStorage } from '../localStorage';
 @Component({
   selector: 'delete-student-page',
   templateUrl: './app.student.delete.html',
-  styleUrls: ['./app.delete.student.css'],
+  styleUrls: ['./app.student.delete.css'],
 })
-export class DeleteStudentPage {
+export class StudentDeletePage {
   constructor(private router: Router, private localStorage: LocalStorage) {}
 
   firstNameValue: string = "";
