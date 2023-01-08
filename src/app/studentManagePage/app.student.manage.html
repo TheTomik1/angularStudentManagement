@@ -40,7 +40,7 @@
           <input type="number" min="0" max="100" class="form-control" [(ngModel)]="percentageValue">
 
           <label class="form-label">Rewards</label>
-          <input type="text" placeholder="Split rewards by dot." class="form-control" [(ngModel)]="rewardsValue"><br>
+          <input type="text" placeholder="Split rewards by a dot." class="form-control" [(ngModel)]="rewardsValue"><br>
         </div>
       </div>
 
@@ -48,8 +48,8 @@
         <button class="btn btn-success m-1" width="20px" (click)="addStudent()">Add</button>
       </div>
 
-      <div class="text-center" *ngIf="verifyFields() == false">
-        <p class="text-danger">Make sure that all the fields are filled.</p>
+      <div class="text-center">
+        <p class="text-danger">{{ errorMessage }}</p>
       </div>
   </div>
 </div>
