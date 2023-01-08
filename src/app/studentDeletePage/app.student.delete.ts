@@ -5,7 +5,7 @@ import { LocalStorage } from '../localStorage';
 
 @Component({
   selector: 'delete-student-page',
-  templateUrl: './app.delete.student.html',
+  templateUrl: './app.student.delete.html',
   styleUrls: ['./app.delete.student.css'],
 })
 export class DeleteStudentPage {

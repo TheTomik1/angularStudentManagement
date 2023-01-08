@@ -6,7 +6,7 @@ import { UserPage } from './userPage/app.userpage';
 import { ViewStudentsPage } from './viewStudentsPage/app.view.students';
 import { StudentDetailPage } from './studentDetailPage/app.student.detail';
 import { ManageStudentPage } from './studentManagePage/app.student.manage';
-import { DeleteStudentPage } from './deleteStudentPage/app.delete.student';
+import { DeleteStudentPage } from './studentDeletePage/app.delete.student';
 
 const routes: Routes = [
   { path: 'logout', component: LogoutPage },
