@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { AppComponent } from './app.component';
 import { LogoutPage } from './logOutPage/app.logout';
 import { UserPage } from './userPage/app.userpage';
-import { ViewStudentsPage } from './viewStudentsPage/app.view.students';
+import { StudentViewPage } from './studentsViewPage/app.students.view';
 import { StudentDetailPage } from './studentDetailPage/app.student.detail';
 import { StudentManagePage } from './studentManagePage/app.student.manage';
 import { StudentDeletePage } from './studentDeletePage/app.student.delete';
@@ -14,7 +14,7 @@ import { StudentDeletePage } from './studentDeletePage/app.student.delete';
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [AppComponent],
-  declarations: [AppComponent, LogoutPage, UserPage, ViewStudentsPage, StudentDetailPage, StudentManagePage ,StudentDeletePage],
+  declarations: [AppComponent, LogoutPage, UserPage, StudentViewPage, StudentDetailPage, StudentManagePage ,StudentDeletePage],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

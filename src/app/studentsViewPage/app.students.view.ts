@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './app.view.students.html',
   styleUrls: ['./app.view.students.css'],
 })
-export class ViewStudentsPage {
+export class StudentViewPage {
   constructor(private router: Router) {}
 
 
