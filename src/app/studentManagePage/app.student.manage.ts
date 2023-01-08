@@ -8,7 +8,7 @@ import { LocalStorage } from '../localStorage';
   templateUrl: './app.student.manage.html',
   styleUrls: ['./app.student.manage.css'],
 })
-export class StudentManagePage {
+export class ManageStudentPage {
   constructor(private localStorage: LocalStorage) {}
 
   
