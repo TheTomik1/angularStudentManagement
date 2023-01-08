@@ -2,51 +2,54 @@
   <div id="managecard" class="card mx-auto" style="width: 30rem">
     <div class="card-body">
       <div class="text-center">
-        <h4 class="card-title">Manage student</h4>
-        <p class="card-text">To alter student information fill the necesseary forms and press the update button. To add a new student fill all the fields and press the add button.</p>
+        <h4 class="card-title">Add student</h4>
+        <p class="card-text">To add student to the system fill the the fields.</p>
       </div>
       
       <div class="float-start">
         <div class="text-center">
           <label class="form-label">First name</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" [(ngModel)]="firstNameValue">
 
           <label class="form-label">Class</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" [(ngModel)]="classValue">
 
           <label class="form-label">Birthday date</label>
-          <input type="date" class="form-control">
+          <input type="date" class="form-control" [(ngModel)]="birthdayValue">
 
           <label class="form-label">Gender</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" [(ngModel)]="genderValue">
 
           <label class="form-label">Disabled</label>
-          <input type="text" class="form-control"><br>
+          <input type="text" class="form-control" [(ngModel)]="disabledValue"><br>
         </div>
       </div>
 
       <div class="float-end">
         <div class="text-center">
           <label class="form-label">Last name</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" [(ngModel)]="lastNameValue">
 
           <label class="form-label">Age</label>
-          <input type="text" class="form-control">
+          <input type="number" min="0" class="form-control" [(ngModel)]="ageValue">
 
           <label class="form-label">Field</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" [(ngModel)]="fieldValue">
           
           <label class="form-label">Percentage (GPA)</label>
-          <input type="text" class="form-control">
+          <input type="number" min="0" max="100" class="form-control" [(ngModel)]="percentageValue">
 
           <label class="form-label">Rewards</label>
-          <input type="text" class="form-control"><br>
+          <input type="text" placeholder="Split rewards by dot." class="form-control" [(ngModel)]="rewardsValue"><br>
         </div>
       </div>
 
       <div class="text-center">
-        <button class="btn btn-success m-1" width="20px">Add</button>
-        <button class="btn btn-primary m-1" width="20px">Edit</button>
+        <button class="btn btn-success m-1" width="20px" (click)="addStudent()">Add</button>
+      </div>
+
+      <div class="text-center" *ngIf="verifyFields() == false">
+        <p class="text-danger">Make sure that all the fields are filled.</p>
       </div>
   </div>
 </div>
