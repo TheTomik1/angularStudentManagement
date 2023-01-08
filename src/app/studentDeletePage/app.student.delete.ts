@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { LocalStorage } from '../localStorage';
 
 @Component({
-  selector: 'delete-student-page',
+  selector: 'student-delete-page',
   templateUrl: './app.student.delete.html',
   styleUrls: ['./app.student.delete.css'],
 })

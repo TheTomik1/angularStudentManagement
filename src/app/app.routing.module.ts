@@ -5,7 +5,7 @@ import { LogoutPage } from './logOutPage/app.logout';
 import { UserPage } from './userPage/app.userpage';
 import { ViewStudentsPage } from './viewStudentsPage/app.view.students';
 import { StudentDetailPage } from './studentDetailPage/app.student.detail';
-import { ManageStudentPage } from './studentManagePage/app.student.manage';
+import { StudentManagePage } from './studentManagePage/app.student.manage';
 import { StudentDeletePage } from './studentDeletePage/app.student.delete';
 
 const routes: Routes = [
@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'viewstudents', component: ViewStudentsPage },
   { path: 'viewstudentdetail', component: StudentDetailPage },
   { path: 'deletestudent', component: StudentDeletePage },
-  { path: 'managestudent', component: ManageStudentPage },
+  { path: 'managestudent', component: StudentManagePage },
 ];
 
 @NgModule({
