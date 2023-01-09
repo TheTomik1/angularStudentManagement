@@ -16,6 +16,7 @@ export class LogoutPage {
       this.router.navigate(['']);
       this.appComponent.handleLogOutPage = "nav-item nav-link disabled";
       this.appComponent.userStatus = "Currently you are not logged in";
+      this.appComponent.handleFormView();
     } else if (agreedStatus == false) {
       this.router.navigate(["user", this.appComponent.userNickname]);
     }

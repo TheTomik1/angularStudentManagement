@@ -27,13 +27,19 @@ export class AppComponent {
   }
 
   verifyLoginForm(): void {
-    // this.localStorage.setData("1", "Tomas,Setnicky,3.B,Programming");
-    // this.localStorage.setData("2", "Marcus,Moravec,3.A,Networking")
-    // this.localStorage.setData("3", "Maria,Dobrá,4.B,Articial Inteligence");
+    //this.localStorage.setData('1', 'Tomas,Setnicky,3.B,Programming');
+    //this.localStorage.setData('2', 'Marcus,Moravec,3.A,Networking');
+    //this.localStorage.setData('3', 'Maria,Dobrá,4.B,Articial Inteligence');
+
+    // this.localStorage.removeData('tomset111@gmail.com');
+
+    // this.localStorage.setData('tomset111@gmail.com', 'Pass,TheTomik');
 
     if (this.userEmail.length == 0) {
+      alert("Email field cannot be empty.");
     }
     if (this.userPassword.length == 0) {
+      alert("Password field cannot be empty.");
     }
 
     const getUserData = this.localStorage.getData(this.userEmail).split(',');

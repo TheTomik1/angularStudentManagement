@@ -59,7 +59,7 @@ export class StudentManagePage {
     let currentHours = currentTime.getHours();
     let currentMinutes = currentTime.getMinutes();
     let currentSeconds = currentTime.getSeconds();
-    let currentTimeFormatted = `${currentDay}:${currentMonth}:${currentYear} ${currentHours}:${currentMinutes}:${currentSeconds}`;
+    let currentTimeFormatted = `${currentDay}.${currentMonth}.${currentYear} ${currentHours}:${currentMinutes}:${currentSeconds}`;
     let mergeData: string = `${this.firstNameValue},${this.lastNameValue},${this.classValue},${this.ageValue},${this.birthdayValue},${this.fieldValue},${this.genderValue},${this.percentageValue},${this.disabledValue},${this.rewardsValue},${currentTimeFormatted}`;
 
     if (this.verifyFields() == true) {
