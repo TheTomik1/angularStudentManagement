@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { ActivatedRoute, Router } from '@angular/router';
+
 import { LocalStorage } from '../localStorage';
 
 @Component({
@@ -11,12 +12,9 @@ import { LocalStorage } from '../localStorage';
 export class StudentManagePage {
   constructor(private localStorage: LocalStorage, private router: Router) {}
 
-  errorMessage: string = "";
-
   firstNameValue: string = '';
   lastNameValue: string = '';
   classValue: string = '';
-  ageValue: number = 0;
   birthdayValue: string = '';
   fieldValue: string = '';
   genderValue: string = '';
@@ -24,16 +22,13 @@ export class StudentManagePage {
   disabledValue: string = '';
   rewardsValue: string = '';
 
+  seasons = ["Spring", "Summer"]
+
   verifyFields(): boolean {
-    if (this.firstNameValue == "" || this.lastNameValue == "" || this.classValue == "" || this.ageValue == 0 || this.birthdayValue == "" || this.fieldValue == "" || this.genderValue == "" ||
-    this.percentageValue == 0 || this.disabledValue == "" || this.rewardsValue == "") {
-      this.errorMessage = "Make sure that all the fields are filled with data and that the rewards are indeed split by a dot.";
+    if (this.firstNameValue == "" || this.lastNameValue == "" || this.birthdayValue == "" || this.fieldValue == "" || this.classValue == "") {
+      alert("First name, last name, birthday date, field, and class are all mandatory fields.");
       return false;
     } else {
-      if (!this.rewardsValue.includes(".")) {
-        this.errorMessage = "Make sure that all the fields are filled with data and that the rewards are indeed split by a dot.";
-        return false;
-      }
       return true;
     }
   }
@@ -50,8 +45,23 @@ export class StudentManagePage {
     return highestId+1;
   }
 
+  getAgeOutOfBirthday(getCurrentTime: Date, getBirthdayDate: Date): number {
+    const timeDiff = getCurrentTime.getTime() - getBirthdayDate.getTime();
+
+    const timeDiffDate = new Date(timeDiff);
+  
+    return Math.abs(timeDiffDate.getUTCFullYear() - 1970);
+  }
+
+  verifyRewards(getRewards: string): boolean {
+    if (getRewards.includes(",")) {
+      alert("Commas are not allowed in the rewards field.");
+      return false;
+    }
+    return true;
+  }
+
   addStudent(): void {
-    let getHighestId: number = this.getHighestStudentId();
     let currentTime = new Date();
     let currentDay = currentTime.getDate();
     let currentMonth = currentTime.getMonth()+1;
@@ -59,13 +69,16 @@ export class StudentManagePage {
     let currentHours = currentTime.getHours();
     let currentMinutes = currentTime.getMinutes();
     let currentSeconds = currentTime.getSeconds();
-    let currentTimeFormatted = `${currentDay}.${currentMonth}.${currentYear} ${currentHours}:${currentMinutes}:${currentSeconds}`;
-    let mergeData: string = `${this.firstNameValue},${this.lastNameValue},${this.classValue},${this.ageValue},${this.birthdayValue},${this.fieldValue},${this.genderValue},${this.percentageValue},${this.disabledValue},${this.rewardsValue},${currentTimeFormatted}`;
 
-    if (this.verifyFields() == true) {
+    let getHighestId: number = this.getHighestStudentId();
+    let getAge = this.getAgeOutOfBirthday(currentTime, new Date(this.birthdayValue));
+
+    let currentTimeFormatted = `${currentDay}.${currentMonth}.${currentYear} ${currentHours}:${currentMinutes}:${currentSeconds}`;
+    let mergeData: string = `${this.firstNameValue},${this.lastNameValue},${this.classValue},${getAge},${this.birthdayValue},${this.fieldValue},${this.genderValue},${this.percentageValue},${this.disabledValue},${this.rewardsValue},${currentTimeFormatted}`;
+
+    if (this.verifyFields() == true && this.verifyRewards(this.rewardsValue) == true) {
       this.localStorage.setData(getHighestId.toString(), mergeData);
       this.router.navigate(["viewstudentdetail"], {queryParams: { id: getHighestId.toString() }});
-      this.errorMessage = "";
     } else {
 
     }
