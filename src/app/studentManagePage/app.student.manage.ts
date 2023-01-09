@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -11,7 +12,7 @@ import { LocalStorage } from '../localStorage';
   templateUrl: './app.student.manage.html',
   styleUrls: ['./app.student.manage.css'],
   standalone: true,
-	imports: [FormsModule, NgbDropdownModule],
+	imports: [FormsModule, NgbDropdownModule, CommonModule],
 })
 export class StudentManagePage {
   constructor(private localStorage: LocalStorage, private router: Router) {}
@@ -22,15 +23,13 @@ export class StudentManagePage {
   birthdayValue: string = '';
   fieldValue: string = '';
   genderValue: string = '';
-  percentageValue: number = 0;
+  markValue: number = 0;
   disabledValue: string = '';
   rewardsValue: string = '';
 
-  seasons = ["Spring", "Summer"]
-
   verifyFields(): boolean {
-    if (this.firstNameValue == "" || this.lastNameValue == "" || this.birthdayValue == "" || this.fieldValue == "" || this.classValue == "") {
-      alert("First name, last name, birthday date, field, and class are all mandatory fields.");
+    if (this.firstNameValue == "" || this.lastNameValue == "") {
+      alert("Empty required fields. Make sure that both required field are not empty.");
       return false;
     } else {
       return true;
@@ -40,8 +39,8 @@ export class StudentManagePage {
   getHighestStudentId(): number {
     let highestId: number = 0;
 
-    for (var i = 0; i < localStorage.length; i++) {
-      var key = localStorage.key(i);
+    for (let i = 0; i < localStorage.length; i++) {
+      let key = localStorage.key(i);
       if (key.length == 1) {
         highestId += 1;
       }
@@ -51,43 +50,20 @@ export class StudentManagePage {
 
   getAgeOutOfBirthday(getCurrentTime: Date, getBirthdayDate: Date): number {
     const timeDiff = getCurrentTime.getTime() - getBirthdayDate.getTime();
-
     const timeDiffDate = new Date(timeDiff);
-  
     return Math.abs(timeDiffDate.getUTCFullYear() - 1970);
   }
 
-  verifyRewards(getRewards: string): boolean {
-    if (getRewards.includes(",")) {
-      alert("Commas are not allowed in the rewards field.");
-      return false;
-    }
-    return true;
-  }
-
   addStudent(): void {
-    console.log("Hey")
-    console.log(this.classValue)
-
-    let currentTime = new Date();
-    let currentDay = currentTime.getDate();
-    let currentMonth = currentTime.getMonth()+1;
-    let currentYear = currentTime.getFullYear();
-    let currentHours = currentTime.getHours();
-    let currentMinutes = currentTime.getMinutes();
-    let currentSeconds = currentTime.getSeconds();
-
+    let latestEdit : string = new Date().toISOString().replace("T", " ").split('.')[0];
     let getHighestId: number = this.getHighestStudentId();
-    let getAge = this.getAgeOutOfBirthday(currentTime, new Date(this.birthdayValue));
+    let getAge: number = this.getAgeOutOfBirthday(new Date(), new Date(this.birthdayValue));
 
-    let currentTimeFormatted = `${currentDay}.${currentMonth}.${currentYear} ${currentHours}:${currentMinutes}:${currentSeconds}`;
-    let mergeData: string = `${this.firstNameValue},${this.lastNameValue},${this.classValue},${getAge},${this.birthdayValue},${this.fieldValue},${this.genderValue},${this.percentageValue},${this.disabledValue},${this.rewardsValue},${currentTimeFormatted}`;
+    let mergeData: string = `${this.firstNameValue},${this.lastNameValue},${this.classValue},${getAge},${this.birthdayValue},${this.fieldValue},${this.genderValue},${this.markValue},${this.disabledValue},{${this.rewardsValue}},${latestEdit}`;
 
-    if (this.verifyFields() == true && this.verifyRewards(this.rewardsValue) == true) {
+    if (this.verifyFields() == true) {
       this.localStorage.setData(getHighestId.toString(), mergeData);
       this.router.navigate(["viewstudentdetail"], {queryParams: { id: getHighestId.toString() }});
-    } else {
-
     }
   }
 }

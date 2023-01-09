@@ -5,79 +5,53 @@
         <h4 class="card-title">Add student</h4>
         <p class="card-text">Here you can add new student to the system.</p>
 
-        <div>
-          <label class="form-label">First name</label>
-          <input type="text" class="form-control" placeholder="Required">
+        <form (ngSubmit)="addStudent()">
+          <div class="form-group">
+            <label for="firstnameinput">First name</label>
+            <input [(ngModel)]="firstNameValue" name="firstnamefield" type="text" class="form-control" id="firstnameinput" placeholder="Required" required />
 
-          <label class="form-label">Last name</label>
-          <input type="text" class="form-control" placeholder="Required">
+            <label for="lastnameinput">Last name</label>
+            <input [(ngModel)]="lastNameValue" name="lastnamefield" type="text" class="form-control" id="lastnameinput" placeholder="Required"/>
 
-          <label class="form-label">Birthday Date</label>
-          <input type="text" class="form-control">
+            <label>Class</label>
+            <select [(ngModel)]="classValue" name="class" class="form-control">
+              <option value="3.A">3.A</option>
+              <option value="3.B">3.B</option>
+              <option value="3.C">3.C</option>
+            </select>
 
-          <label class="form-label">Mark avarage</label>
-          <input type="number" min="0" max="100" class="form-control">
+            <label for="birthdayinput">Birthday date</label>
+            <input [(ngModel)]="birthdayValue" name="birthdayfield" type="date" class="form-control" id="birthdayinput"/>
+            
+            <label>Field</label>
+            <select [(ngModel)]="fieldValue" name="field" class="form-control">
+              <option value="Programming">Programming</option>
+              <option value="Networking">Networking</option>
+              <option value="Artifical Intelligence">Articiial Intelligence</option>
+            </select>
 
-          <label class="form-label">Rewards</label>
-          <input type="text" class="form-control">
+            <label>Gender</label>
+            <select [(ngModel)]="genderValue" name="gender" class="form-control">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
 
-          <br>
-          <div class="row">
-          <div class="col">
-            <div ngbDropdown class="d-inline-block">
-              <button type="button" [(ngModel)]="classValue" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Class</button>
-                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                  <button ngbDropdownItem>3.A</button>
-                  <button ngbDropdownItem>3.B</button>
-                  <button ngbDropdownItem>3.C</button>
-                </div>
-              </div>
-            </div>
+            <label for="markinput">Avarage mark percentage</label>
+            <input [(ngModel)]="markValue" name="markinput" type="number" min="0" max="100" class="form-control" id="markinput"/>
+
+            <label>Disabled</label>
+            <select [(ngModel)]="disabledValue" name="disabled" class="form-control">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+
+            <label for="rewardsinput">Rewards</label>
+            <input [(ngModel)]="rewardsValue" name="birthdayfield" type="text" class="form-control" id="rewardsinput"/>
+
+            <br>
+            <button type="submit" class="btn btn-success">Add new student</button>
           </div>
-
-          <br>
-          <div class="row">
-          <div class="col">
-            <div ngbDropdown class="d-inline-block">
-              <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Field</button>
-                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                  <button ngbDropdownItem>Programming</button>
-                  <button ngbDropdownItem>Networking</button>
-                  <button ngbDropdownItem>Aritificial Intelligence</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <br>
-          <div class="row">
-          <div class="col">
-            <div ngbDropdown class="d-inline-block">
-              <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Gender</button>
-                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                  <button ngbDropdownItem>Male</button>
-                  <button ngbDropdownItem>Female</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <br>
-          <div class="row">
-          <div class="col">
-            <div ngbDropdown class="d-inline-block">
-              <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Disabled</button>
-                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                  <button ngbDropdownItem>Yes</button>
-                  <button ngbDropdownItem>No</button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <br>
-          <button type="button" class="btn btn-success" (click)="addStudent()">Add</button>
-        </div>
+        </form>
       </div>
     </div>   
   </div>
