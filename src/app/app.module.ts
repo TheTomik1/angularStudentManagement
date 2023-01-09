@@ -12,9 +12,9 @@ import { StudentManagePage } from './studentManagePage/app.student.manage';
 import { StudentDeletePage } from './studentDeletePage/app.student.delete';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, StudentManagePage],
   providers: [AppComponent],
-  declarations: [AppComponent, LogoutPage, UserPage, StudentViewPage, StudentDetailPage, StudentManagePage ,StudentDeletePage],
+  declarations: [AppComponent, LogoutPage, UserPage, StudentViewPage, StudentDetailPage, StudentDeletePage],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
