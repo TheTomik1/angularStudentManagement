@@ -20,10 +20,11 @@ export class StudentManagePage {
   firstNameValue: string = '';
   lastNameValue: string = '';
   classValue: string = '';
+  ageValue: string = ''
   birthdayValue: string = '';
   fieldValue: string = '';
   genderValue: string = '';
-  markValue: number = 0;
+  markValue: string = '';
   disabledValue: string = '';
   rewardsValue: string = '';
 
@@ -48,10 +49,10 @@ export class StudentManagePage {
     return highestId+1;
   }
 
-  getAgeOutOfBirthday(getCurrentTime: Date, getBirthdayDate: Date): number {
+  getAgeOutOfBirthday(getCurrentTime: Date, getBirthdayDate: Date): string {
     const timeDiff = getCurrentTime.getTime() - getBirthdayDate.getTime();
     const timeDiffDate = new Date(timeDiff);
-    return Math.abs(timeDiffDate.getUTCFullYear() - 1970);
+    return Math.abs(timeDiffDate.getUTCFullYear() - 1970).toString();
   }
 
   verifyRewards(): boolean {
@@ -66,7 +67,7 @@ export class StudentManagePage {
   addStudent(): void {
     let latestEdit : string = new Date().toISOString().replace("T", " ").split('.')[0];
     let getHighestId: number = this.getHighestStudentId();
-    let getAge: number = this.getAgeOutOfBirthday(new Date(), new Date(this.birthdayValue));
+    let getAge: string = this.getAgeOutOfBirthday(new Date(), new Date(this.birthdayValue));
 
     let mergeData: string = `${this.firstNameValue},${this.lastNameValue},${this.classValue},${getAge},${this.birthdayValue},${this.fieldValue},${this.genderValue},${this.markValue},${this.disabledValue},${this.rewardsValue},${latestEdit}`;
 
