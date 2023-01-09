@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
@@ -10,7 +11,7 @@ import { LocalStorage } from '../localStorage';
   templateUrl: './app.student.manage.html',
   styleUrls: ['./app.student.manage.css'],
   standalone: true,
-	imports: [NgbDropdownModule],
+	imports: [FormsModule, NgbDropdownModule],
 })
 export class StudentManagePage {
   constructor(private localStorage: LocalStorage, private router: Router) {}
@@ -65,6 +66,9 @@ export class StudentManagePage {
   }
 
   addStudent(): void {
+    console.log("Hey")
+    console.log(this.classValue)
+
     let currentTime = new Date();
     let currentDay = currentTime.getDate();
     let currentMonth = currentTime.getMonth()+1;

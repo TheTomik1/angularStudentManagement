@@ -1,42 +1,84 @@
 <div class="position-absolute top-50 start-50 translate-middle">
-  <div id="studentAddCard" class="card mx-auto" style="width: 30rem">
+  <div id="studentAddCard" class="card mx-auto" style="width: 25rem">
     <div class="card-body">
       <div class="text-center">
         <h4 class="card-title">Add student</h4>
-        <p class="card-text">To add student to the system fill all the fields.</p>
+        <p class="card-text">Here you can add new student to the system.</p>
 
-          <label class="form-label">Class</label>
-          <input type="text" class="form-control" placeholder="Required" [(ngModel)]="classValue">
+        <div>
+          <label class="form-label">First name</label>
+          <input type="text" class="form-control" placeholder="Required">
 
-          <label class="form-label">Birthday date</label>
-          <input type="date" class="form-control">
-
-          <label class="form-label">Gender</label>
-          <input type="text" class="form-control" >
-
-          <label class="form-label">Disabled</label>
-          <input type="text" class="form-control"><br>
-        </div>
-      </div>
-
-      <div class="float-end">
-        <div class="text-center">
           <label class="form-label">Last name</label>
           <input type="text" class="form-control" placeholder="Required">
 
-          <label class="form-label">Field</label>
-          <input type="text" class="form-control" placeholder="Required">
-          
-          <label class="form-label">Percentage (GPA)</label>
+          <label class="form-label">Birthday Date</label>
+          <input type="text" class="form-control">
+
+          <label class="form-label">Mark avarage</label>
           <input type="number" min="0" max="100" class="form-control">
 
           <label class="form-label">Rewards</label>
-          <input type="text" placeholder="Split by slash." class="form-control"><br>
+          <input type="text" class="form-control">
+
+          <br>
+          <div class="row">
+          <div class="col">
+            <div ngbDropdown class="d-inline-block">
+              <button type="button" [(ngModel)]="classValue" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Class</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <button ngbDropdownItem>3.A</button>
+                  <button ngbDropdownItem>3.B</button>
+                  <button ngbDropdownItem>3.C</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br>
+          <div class="row">
+          <div class="col">
+            <div ngbDropdown class="d-inline-block">
+              <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Field</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <button ngbDropdownItem>Programming</button>
+                  <button ngbDropdownItem>Networking</button>
+                  <button ngbDropdownItem>Aritificial Intelligence</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br>
+          <div class="row">
+          <div class="col">
+            <div ngbDropdown class="d-inline-block">
+              <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Gender</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <button ngbDropdownItem>Male</button>
+                  <button ngbDropdownItem>Female</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br>
+          <div class="row">
+          <div class="col">
+            <div ngbDropdown class="d-inline-block">
+              <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Disabled</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <button ngbDropdownItem>Yes</button>
+                  <button ngbDropdownItem>No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <br>
+          <button type="button" class="btn btn-success" (click)="addStudent()">Add</button>
         </div>
       </div>
-
-      <div class="text-center">
-        <button class="btn btn-success m-1" width="20px" (click)="addStudent()">Add</button>
-      </div>
+    </div>   
   </div>
 </div>
