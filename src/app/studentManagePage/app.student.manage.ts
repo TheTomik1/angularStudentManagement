@@ -54,14 +54,23 @@ export class StudentManagePage {
     return Math.abs(timeDiffDate.getUTCFullYear() - 1970);
   }
 
+  verifyRewards(): boolean {
+    if (this.rewardsValue.includes(",")) {
+      alert("Commas are not allowed in the rewards field.")
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   addStudent(): void {
     let latestEdit : string = new Date().toISOString().replace("T", " ").split('.')[0];
     let getHighestId: number = this.getHighestStudentId();
     let getAge: number = this.getAgeOutOfBirthday(new Date(), new Date(this.birthdayValue));
 
-    let mergeData: string = `${this.firstNameValue},${this.lastNameValue},${this.classValue},${getAge},${this.birthdayValue},${this.fieldValue},${this.genderValue},${this.markValue},${this.disabledValue},{${this.rewardsValue}},${latestEdit}`;
+    let mergeData: string = `${this.firstNameValue},${this.lastNameValue},${this.classValue},${getAge},${this.birthdayValue},${this.fieldValue},${this.genderValue},${this.markValue},${this.disabledValue},${this.rewardsValue},${latestEdit}`;
 
-    if (this.verifyFields() == true) {
+    if (this.verifyFields() == true && this.verifyRewards() == true) {
       this.localStorage.setData(getHighestId.toString(), mergeData);
       this.router.navigate(["viewstudentdetail"], {queryParams: { id: getHighestId.toString() }});
     }
