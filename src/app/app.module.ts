@@ -11,7 +11,7 @@ import { StudentDetailPage } from './studentDetailPage/app.student.detail';
 import { StudentAddPage } from './studentAddPage/app.student.add';
 import { StudentDeletePage } from './studentDeletePage/app.student.delete';
 
-import { LoggedInGuard } from './loged.guard.service';
+import { LoggedInGuard } from './logged.guard.service';
 import { AuthService } from './auth.service';
 
 @NgModule({

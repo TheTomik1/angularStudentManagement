@@ -8,7 +8,7 @@ import { StudentDetailPage } from './studentDetailPage/app.student.detail';
 import { StudentAddPage } from './studentAddPage/app.student.add';
 import { StudentDeletePage } from './studentDeletePage/app.student.delete';
 
-import { LoggedInGuard } from './logged-in-guard';
+import { LoggedInGuard } from './logged.guard.service';
 
 const routes: Routes = [
   { path: 'logout', component: LogoutPage },
