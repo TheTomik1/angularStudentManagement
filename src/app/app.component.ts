@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from './auth.service';
+import { NavigationStart, Router } from '@angular/router';
 
 import { LocalStorage } from './localStorage';
 
@@ -9,7 +9,13 @@ import { LocalStorage } from './localStorage';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor(localStorage: LocalStorage) {}
+  constructor(localStorage: LocalStorage, private router: Router) {
+    let showInformation: boolean = true;
+
+    if (this.router.url !== '') {
+      showInformation = false;
+    }
+  }
 
   checkInitialization(): boolean {
     for (var i = 0; i < localStorage.length; i++) {
