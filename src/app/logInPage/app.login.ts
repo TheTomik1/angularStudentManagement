@@ -15,7 +15,6 @@ export class LoginPage {
   userEmail: string = '';
   userPassword: string = '';
   userNickname: string = '';
-  loginFormView: boolean = false;
 
   sendToUserPage(getUserName: string): void {
     this.router.navigate(['user', getUserName]);
