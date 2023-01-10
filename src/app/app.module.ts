@@ -17,7 +17,7 @@ import { AuthService } from './auth.service';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule],
-  providers: [AppComponent, LoggedInGuard, AuthService],
+  providers: [LoginPage, LoggedInGuard, AuthService],
   declarations: [AppComponent, LoginPage, LogoutPage, UserPage, StudentViewPage, StudentDetailPage, StudentAddPage, StudentDeletePage],
   bootstrap: [AppComponent],
 })
