@@ -11,9 +11,11 @@ import { StudentDetailPage } from './studentDetailPage/app.student.detail';
 import { StudentAddPage } from './studentAddPage/app.student.add';
 import { StudentDeletePage } from './studentDeletePage/app.student.delete';
 
+import { AuthService } from './auth.service';
+
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule],
-  providers: [AppComponent],
+  providers: [AppComponent, AuthService],
   declarations: [AppComponent, LogoutPage, UserPage, StudentViewPage, StudentDetailPage, StudentAddPage, StudentDeletePage],
   bootstrap: [AppComponent],
 })
