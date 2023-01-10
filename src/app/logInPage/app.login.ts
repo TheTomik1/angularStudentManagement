@@ -31,6 +31,7 @@ export class LoginPage {
     try {
       const getUserData: Array<string> = this.localStorage.getData(this.userEmail).split(',');
       if (getUserData[0] == this.userPassword) {
+        console.log("Hai")
         this.authService.login();
         this.userNickname = getUserData[1];
         this.sendToUserPage(this.userNickname);

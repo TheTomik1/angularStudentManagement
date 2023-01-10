@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-
-import { LoginPage } from '../logInPage/app.login';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'user-page',
@@ -9,7 +7,7 @@ import { LoginPage } from '../logInPage/app.login';
   styleUrls: ['./app.userpage.css'],
 })
 export class UserPage {
-  constructor(private loginPage: LoginPage, private router: Router) {}
+  constructor(private route: ActivatedRoute) {}
 
-  getUserNickname = this.loginPage.userNickname;
+  getUserNickname = this.route.snapshot.paramMap.get('id');
 }
