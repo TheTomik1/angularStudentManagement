@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AppComponent } from '../app.component';
 import { AuthService } from '../auth.service';
+import { LoginPage } from '../logInPage/app.login';
 
 @Component({
   selector: 'logout-page',
@@ -10,7 +10,7 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./app.logout.css'],
 })
 export class LogoutPage {
-  constructor(private appComponent: AppComponent, private router: Router, private authService: AuthService) {}
+  constructor(private appComponent: LoginPage, private router: Router, private authService: AuthService) {}
 
   processLogOut(agreedStatus: boolean): void {
     if (agreedStatus == true) {

@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app.routing.module';
 
 import { AppComponent } from './app.component';
+import { LoginPage } from './logInPage/app.login';
 import { LogoutPage } from './logOutPage/app.logout';
 import { UserPage } from './userPage/app.userpage';
 import { StudentViewPage } from './studentsViewPage/app.students.view';
@@ -17,7 +18,7 @@ import { AuthService } from './auth.service';
 @NgModule({
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [AppComponent, LoggedInGuard, AuthService],
-  declarations: [AppComponent, LogoutPage, UserPage, StudentViewPage, StudentDetailPage, StudentAddPage, StudentDeletePage],
+  declarations: [AppComponent, LoginPage, LogoutPage, UserPage, StudentViewPage, StudentDetailPage, StudentAddPage, StudentDeletePage],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -9,8 +9,10 @@ import { StudentAddPage } from './studentAddPage/app.student.add';
 import { StudentDeletePage } from './studentDeletePage/app.student.delete';
 
 import { LoggedInGuard } from './logged.guard.service';
+import { LoginPage } from './logInPage/app.login';
 
 const routes: Routes = [
+  { path: 'login', component: LoginPage },
   { path: 'logout', component: LogoutPage, canActivate: [LoggedInGuard] },
   { path: 'user/:id', component: UserPage, canActivate: [LoggedInGuard] },
   { path: 'viewstudents', component: StudentViewPage },
