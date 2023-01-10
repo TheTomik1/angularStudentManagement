@@ -27,9 +27,11 @@ export class StudentDeletePage {
       if (key.length == 1) {
         if (value[0] == this.firstNameValue.trim() && value[1] == this.lastNameValue.trim()) {
           this.deleteStudent(key);
+          return;
         }
-      }    
+      }
     }
+    alert("Student not found in the system.");
   }
 
   deleteStudent(key: string): void {
