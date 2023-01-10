@@ -10,4 +10,8 @@
 </div>
 </nav>
 
+<div *ngIf="checkInitialization()==false" id="initialize">
+  <button class="btn btn-success" (click)="addAdminTeacher()">Initialize</button>
+</div>
+
 <router-outlet></router-outlet>
