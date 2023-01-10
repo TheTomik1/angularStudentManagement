@@ -8,13 +8,13 @@ import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { LocalStorage } from '../localStorage';
 
 @Component({
-  selector: 'student-manage-page',
-  templateUrl: './app.student.manage.html',
-  styleUrls: ['./app.student.manage.css'],
+  selector: 'student-add-page',
+  templateUrl: './app.student.add.html',
+  styleUrls: ['./app.student.add.css'],
   standalone: true,
 	imports: [FormsModule, NgbDropdownModule, CommonModule],
 })
-export class StudentManagePage {
+export class StudentAddPage {
   constructor(private localStorage: LocalStorage, private router: Router) {}
 
   firstNameValue: string = '';
