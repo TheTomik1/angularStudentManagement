@@ -15,10 +15,10 @@ const routes: Routes = [
   { path: 'login', component: LoginPage},
   { path: 'logout', component: LogoutPage, canActivate: [LoggedInGuard] },
   { path: 'user/:id', component: UserPage, canActivate: [LoggedInGuard] },
-  { path: 'viewstudents', component: StudentViewPage, canActivate: [LoggedInGuard] },
-  { path: 'viewstudentdetail', component: StudentDetailPage, canActivate: [LoggedInGuard] },
+  { path: 'viewstudents', component: StudentViewPage },
+  { path: 'viewstudentdetail', component: StudentDetailPage },
   { path: 'deletestudent', component: StudentDeletePage },
-  { path: 'addstudent', component: StudentAddPage, canActivate: [LoggedInGuard] },
+  { path: 'addstudent', component: StudentAddPage },
 ];
 
 @NgModule({

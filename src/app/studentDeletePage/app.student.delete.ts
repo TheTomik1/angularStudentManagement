@@ -13,8 +13,14 @@ export class StudentDeletePage {
 
   firstNameValue: string = "";
   lastNameValue: string = "";
+  confirmDelete: string = ""; 
 
   findStudent(): void {
+    if (this.confirmDelete != "Yes") {
+      alert("You must confirm delete action inside the form.");
+      return;
+    }
+
     for (var i = 0; i < localStorage.length; i++) {
       var key = localStorage.key(i);
       var value = localStorage.getItem(key).split(",");
@@ -24,11 +30,10 @@ export class StudentDeletePage {
         }
       }    
     }
-    alert("This student has not been found in the system. Be sure to check your spelling.");
   }
 
   deleteStudent(key: string): void {
-      this.localStorage.removeData(key);
-      this.router.navigate(["viewstudents"]);
+    this.localStorage.removeData(key);
+    this.router.navigate(["viewstudents"]);
   }
 }
