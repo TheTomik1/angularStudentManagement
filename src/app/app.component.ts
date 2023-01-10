@@ -9,13 +9,7 @@ import { LocalStorage } from './localStorage';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  constructor(localStorage: LocalStorage, private router: Router) {
-    let showInformation: boolean = true;
-
-    if (this.router.url !== '') {
-      showInformation = false;
-    }
-  }
+  constructor(localStorage: LocalStorage, private router: Router) {}
 
   checkInitialization(): boolean {
     for (var i = 0; i < localStorage.length; i++) {
