@@ -1,9 +1,5 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-
-import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { LocalStorage } from '../localStorage';
 
@@ -11,8 +7,6 @@ import { LocalStorage } from '../localStorage';
   selector: 'student-add-page',
   templateUrl: './app.student.add.html',
   styleUrls: ['./app.student.add.css'],
-  standalone: true,
-	imports: [FormsModule, NgbDropdownModule, CommonModule],
 })
 export class StudentAddPage {
   constructor(private localStorage: LocalStorage, private router: Router) {}
