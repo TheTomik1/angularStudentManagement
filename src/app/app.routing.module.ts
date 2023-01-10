@@ -11,7 +11,7 @@ import { StudentDeletePage } from './studentDeletePage/app.student.delete';
 import { LoggedInGuard } from './logged.guard.service';
 
 const routes: Routes = [
-  { path: 'logout', component: LogoutPage },
+  { path: 'logout', component: LogoutPage, canActivate: [LoggedInGuard] },
   { path: 'user/:id', component: UserPage, canActivate: [LoggedInGuard] },
   { path: 'viewstudents', component: StudentViewPage },
   { path: 'viewstudentdetail', component: StudentDetailPage },
