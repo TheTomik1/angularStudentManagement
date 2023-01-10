@@ -29,11 +29,17 @@ export class AppComponent {
       alert("Password field cannot be empty.");
     }
 
-    const getUserData = this.localStorage.getData(this.userEmail).split(',');
-    if (getUserData[0] == this.userPassword) {
-      this.authService.login();
-      this.userNickname = getUserData[1];
-      this.sendToUserPage(this.userNickname);
+    try {
+      const getUserData: Array<string> = this.localStorage.getData(this.userEmail).split(',');
+      if (getUserData[0] == this.userPassword) {
+        this.authService.login();
+        this.userNickname = getUserData[1];
+        this.sendToUserPage(this.userNickname);
+      } else {
+        alert("Account found, but wrong password provided. Make sure to check your spelling.")
+      }
+    } catch (TypeError) {
+      alert("Account not found. Make sure to check your spelling.")
     }
   }
 }
