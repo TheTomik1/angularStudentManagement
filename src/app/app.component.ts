@@ -11,6 +11,8 @@ import { LocalStorage } from './localStorage';
 export class AppComponent {
   constructor(localStorage: LocalStorage, private router: Router) {}
 
+  currentUserId = '';
+
   checkInitialization(): boolean {
     for (var i = 0; i < localStorage.length; i++) {
       var key = localStorage.key(i);
