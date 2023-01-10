@@ -14,9 +14,7 @@ export class LogoutPage {
   processLogOut(agreedStatus: boolean): void {
     if (agreedStatus == true) {
       this.router.navigate(['']);
-      this.appComponent.handleLogOutPage = 'nav-item nav-link disabled';
-      this.appComponent.userStatus = 'Currently you are not logged in';
-      this.appComponent.handleFormView();
+      
       this.appComponent.userEmail = '';
       this.appComponent.userPassword = '';
     } else if (agreedStatus == false) {
