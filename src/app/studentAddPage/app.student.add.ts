@@ -44,6 +44,10 @@ export class StudentAddPage {
   }
 
   getAgeOutOfBirthday(getCurrentTime: Date, getBirthdayDate: Date): string {
+    if (getBirthdayDate.toString() == "Invalid Date") {
+      return "Not specified."
+    }
+
     const timeDiff = getCurrentTime.getTime() - getBirthdayDate.getTime();
     const timeDiffDate = new Date(timeDiff);
     return Math.abs(timeDiffDate.getUTCFullYear() - 1970).toString();

@@ -16,8 +16,8 @@ export class StudentDetailPage {
   getStudentInfo(studentId: string): Array<string> {
     let value = [];
 
-    for (var i = 0; i < localStorage.length; i++) {
-      var key = localStorage.key(i);
+    for (let i = 0; i < localStorage.length; i++) {
+      let key = localStorage.key(i);
       if (key == studentId) { 
         value = localStorage.getItem(key).split(",");
       }    
