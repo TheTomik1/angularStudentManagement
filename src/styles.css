@@ -8,3 +8,7 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
+
+p {
+  font-family: Lato;
+}
