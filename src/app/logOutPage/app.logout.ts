@@ -10,16 +10,14 @@ import { LoginPage } from '../logInPage/app.login';
   styleUrls: ['./app.logout.css'],
 })
 export class LogoutPage {
-  constructor(private appComponent: LoginPage, private router: Router, private authService: AuthService) {}
+  constructor(private loginPage: LoginPage, private router: Router, private authService: AuthService) {}
 
   processLogOut(agreedStatus: boolean): void {
     if (agreedStatus == true) {
       this.authService.logOut();
-      this.appComponent.userEmail = '';
-      this.appComponent.userPassword = '';
       this.router.navigate(['']);
     } else if (agreedStatus == false) {
-      this.appComponent.sendToUserPage(this.appComponent.userNickname);
+      this.loginPage.sendToUserPage(this.loginPage.userNickname);
     }
   }
 }
