@@ -9,7 +9,7 @@ import { LoginPage } from '../logInPage/app.login';
   styleUrls: ['./app.userpage.css'],
 })
 export class UserPage {
-  constructor(private appComponent: LoginPage, private router: Router) {}
+  constructor(private loginPage: LoginPage, private router: Router) {}
 
-  getUserNickname = this.appComponent.userNickname;
+  getUserNickname = this.loginPage.userNickname;
 }
