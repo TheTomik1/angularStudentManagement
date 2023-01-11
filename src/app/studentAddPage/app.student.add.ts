@@ -63,7 +63,9 @@ export class StudentAddPage {
   }
 
   addStudent(): void {
-    let latestEdit : string = new Date().toISOString().replace("T", " ").split('.')[0];
+    let currentDate: Date = new Date()  
+    currentDate.setHours(currentDate.getHours() + 1)  
+    let latestEdit : string = currentDate.toISOString().replace("T", " ").split('.')[0];
     let getHighestId: number = this.getHighestStudentId();
     let getAge: string = this.getAgeOutOfBirthday(new Date(), new Date(this.birthdayValue));
 

@@ -47,7 +47,9 @@ export class StudentEditPage {
   }
 
   editStudent(): void {
-    let latestEdit : string = new Date().toISOString().replace("T", " ").split('.')[0];
+    let currentDate: Date = new Date()  
+    currentDate.setHours(currentDate.getHours() + 1)  
+    let latestEdit : string = currentDate.toISOString().replace("T", " ").split('.')[0];
     let getAge: string = this.getAgeOutOfBirthday(new Date(), new Date(this.birthdayValue));
     
     let mergeData: string = `${this.firstNameValue},${this.lastNameValue},${this.classValue},${getAge},${this.birthdayValue},${this.fieldValue},${this.genderValue},${this.markValue},${this.disabledValue},${this.rewardsValue},${latestEdit}`;
