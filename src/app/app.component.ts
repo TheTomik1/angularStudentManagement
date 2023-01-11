@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { LoginPage } from './logInPage/app.login';
 
 @Component({
   selector: 'my-app',
