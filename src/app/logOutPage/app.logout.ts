@@ -9,7 +9,7 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./app.logout.css'],
 })
 export class LogoutPage {
-  constructor(private router: Router, private route : ActivatedRoute ,private authService: AuthService) {}
+  constructor(private router: Router, private route : ActivatedRoute, private authService: AuthService) {}
 
   getUserId = 0;
 

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { AppComponent } from '../app.component';
+import { InformationPage } from '../informationPage/app.information';
 
 @Component({
   selector: 'user-page',
@@ -9,7 +9,7 @@ import { AppComponent } from '../app.component';
   styleUrls: ['./app.userpage.css'],
 })
 export class UserPage {
-  constructor(private route: ActivatedRoute, private appComponent: AppComponent) {}
+  constructor(private route: ActivatedRoute, private informationPage: InformationPage) {}
 
   currentUserId = this.route.snapshot.paramMap.get('id');
 }
