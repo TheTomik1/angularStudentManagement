@@ -9,7 +9,7 @@ import { InformationPage } from '../informationPage/app.information';
   styleUrls: ['./app.userpage.css'],
 })
 export class UserPage {
-  constructor(private route: ActivatedRoute, private informationPage: InformationPage) {}
+  constructor(private route: ActivatedRoute) {}
 
   currentUserId = this.route.snapshot.paramMap.get('id');
 }
