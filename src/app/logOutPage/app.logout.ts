@@ -10,17 +10,14 @@ import { UserPage } from '../userPage/app.userpage';
   styleUrls: ['./app.logout.css'],
 })
 export class LogoutPage {
-  constructor(private router: Router, private authService: AuthService, private userPage: UserPage) {}
-
-  getCurrentUserName = this.userPage.currentUserName;
+  constructor(private router: Router, private authService: AuthService) {}
 
   processLogOut(agreedStatus: boolean): void {
     if (agreedStatus == true) {
       this.authService.logOut();
       this.router.navigate(['']);
     } else if (agreedStatus == false) {
-      console.log(this.getCurrentUserName)
-      this.router.navigate(["user", this.getCurrentUserName]);
+      this.router.navigate(["user"]);
     }
   }
 }
