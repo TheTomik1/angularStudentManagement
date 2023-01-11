@@ -24,6 +24,6 @@ export class InformationPage {
   }
 
   addAdminTeacher(): void {
-    localStorage.setItem("adminteacher@gmail.com", "Password,Admin")
+    localStorage.setItem("adminteacher@gmail.com", "Password,admin")
   }
 }
