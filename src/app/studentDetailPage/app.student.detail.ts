@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-
 import { ActivatedRoute, Router } from '@angular/router';
+
 import { LocalStorage } from '../localStorage';
+
 
 @Component({
   selector: 'student-detail-page',
