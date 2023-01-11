@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app.routing.module';
 
+import { InformationPage } from './informationPage/app.information';
 import { AppComponent } from './app.component';
 import { LoginPage } from './logInPage/app.login';
 import { LogoutPage } from './logOutPage/app.logout';
@@ -19,7 +20,7 @@ import { AuthService } from './auth.service';
 @NgModule({
   imports: [BrowserModule, CommonModule, FormsModule, AppRoutingModule],
   providers: [AppComponent, UserPage, LoggedInGuard, AuthService],
-  declarations: [AppComponent, LoginPage, LogoutPage, UserPage, StudentViewPage, StudentDetailPage, StudentAddPage, StudentDeletePage],
+  declarations: [AppComponent, InformationPage, LoginPage, LogoutPage, UserPage, StudentViewPage, StudentDetailPage, StudentAddPage, StudentDeletePage],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
