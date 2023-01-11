@@ -23,8 +23,12 @@ export class StudentViewPage {
     return students;
   }
 
-  redirectToDetail(getKey: string): void {
+  sendToDetail(getKey: string): void {
     this.router.navigate(['viewstudentdetail'], {queryParams: { id: getKey }});
+  }
+
+  sendToEdit(getKey: string): void {
+    this.router.navigate(['studentedit'], {queryParams: { id: getKey }});
   }
 
   allStudents: Array<string> = this.getAllStudents();
