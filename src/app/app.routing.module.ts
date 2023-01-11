@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'viewstudentdetail', component: StudentDetailPage, canActivate: [LoggedInGuard] },
   { path: 'deletestudent', component: StudentDeletePage, canActivate: [LoggedInGuard] },
   { path: 'addstudent', component: StudentAddPage, canActivate: [LoggedInGuard] },
-  { path: 'idk', component: InformationPage }
+  { path: '**', component: InformationPage }
 ];
 
 @NgModule({

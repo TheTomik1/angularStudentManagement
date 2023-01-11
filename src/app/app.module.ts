@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app.routing.module';
 
@@ -16,8 +17,8 @@ import { LoggedInGuard } from './logged.guard.service';
 import { AuthService } from './auth.service';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
-  providers: [AppComponent, LoggedInGuard, AuthService],
+  imports: [BrowserModule, CommonModule, FormsModule, AppRoutingModule],
+  providers: [AppComponent, UserPage, LoggedInGuard, AuthService],
   declarations: [AppComponent, LoginPage, LogoutPage, UserPage, StudentViewPage, StudentDetailPage, StudentAddPage, StudentDeletePage],
   bootstrap: [AppComponent],
 })

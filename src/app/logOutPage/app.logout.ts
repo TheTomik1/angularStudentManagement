@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { AuthService } from '../auth.service';
+import { UserPage } from '../userPage/app.userpage';
 
 @Component({
   selector: 'logout-page',
@@ -9,16 +10,17 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./app.logout.css'],
 })
 export class LogoutPage {
-  constructor(private router: Router, private route : ActivatedRoute, private authService: AuthService) {}
+  constructor(private router: Router, private route : ActivatedRoute, private authService: AuthService, private userPage: UserPage) {}
 
-  getUserId = 0;
+  getCurrentUserName = this.userPage.currentUserName;
 
   processLogOut(agreedStatus: boolean): void {
     if (agreedStatus == true) {
       this.authService.logOut();
       this.router.navigate(['']);
     } else if (agreedStatus == false) {
-      this.router.navigate(["user", this.getUserId])
+      console.log(this.getCurrentUserName)
+      this.router.navigate(["user", this.getCurrentUserName]);
     }
   }
 }
