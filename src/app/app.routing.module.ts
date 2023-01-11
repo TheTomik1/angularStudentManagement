@@ -15,7 +15,7 @@ import { LoggedInGuard } from './logged.guard.service';
 const routes: Routes = [
   { path: 'login', component: LoginPage },
   { path: 'logout', component: LogoutPage, canActivate: [LoggedInGuard] },
-  { path: 'user/:id', component: UserPage, canActivate: [LoggedInGuard] },
+  { path: 'user/:name', component: UserPage, canActivate: [LoggedInGuard] },
   { path: 'viewstudents', component: StudentViewPage, canActivate: [LoggedInGuard] },
   { path: 'viewstudentdetail', component: StudentDetailPage, canActivate: [LoggedInGuard] },
   { path: 'deletestudent', component: StudentDeletePage, canActivate: [LoggedInGuard] },

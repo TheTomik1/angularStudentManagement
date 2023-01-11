@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { InformationPage } from '../informationPage/app.information';
-
 @Component({
   selector: 'user-page',
   templateUrl: './app.userpage.html',
@@ -11,5 +9,5 @@ import { InformationPage } from '../informationPage/app.information';
 export class UserPage {
   constructor(private route: ActivatedRoute) {}
 
-  currentUserId = this.route.snapshot.paramMap.get('id');
+  currentUserId = this.route.snapshot.paramMap.get('name');
 }
