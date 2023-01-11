@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { AuthService } from '../auth.service';
 import { UserPage } from '../userPage/app.userpage';
@@ -10,7 +10,7 @@ import { UserPage } from '../userPage/app.userpage';
   styleUrls: ['./app.logout.css'],
 })
 export class LogoutPage {
-  constructor(private router: Router, private route : ActivatedRoute, private authService: AuthService, private userPage: UserPage) {}
+  constructor(private router: Router, private authService: AuthService, private userPage: UserPage) {}
 
   getCurrentUserName = this.userPage.currentUserName;
 

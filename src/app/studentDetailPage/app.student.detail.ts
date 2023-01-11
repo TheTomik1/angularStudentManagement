@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { LocalStorage } from '../localStorage';
 
@@ -10,7 +10,7 @@ import { LocalStorage } from '../localStorage';
   styleUrls: ['./app.student.detail.css'],
 })
 export class StudentDetailPage {
-  constructor(private localStorage: LocalStorage, private router: Router, private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private localStorage: LocalStorage) {}
 
   getStudentId: string = this.route.snapshot.queryParams.id;
 

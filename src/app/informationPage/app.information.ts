@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
 import { LocalStorage } from '../localStorage';
@@ -10,7 +9,7 @@ import { LocalStorage } from '../localStorage';
   styleUrls: ['./app.information.css'],
 })
 export class InformationPage {
-  constructor(localStorage: LocalStorage, private router: Router) {}
+  constructor(private router: Router, localStorage: LocalStorage) {}
 
   currentUserId = '';
 

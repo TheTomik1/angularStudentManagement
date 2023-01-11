@@ -9,7 +9,7 @@ import { LocalStorage } from '../localStorage';
   styleUrls: ['./app.student.edit.css'],
 })
 export class StudentEditPage {
-  constructor(private localStorage: LocalStorage, private router: Router, private route: ActivatedRoute) {}
+  constructor(private router: Router, private route: ActivatedRoute, private localStorage: LocalStorage) {}
 
   getStudentId: string = this.route.snapshot.queryParams.id;
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { LocalStorage } from '../localStorage';
 
@@ -9,7 +9,7 @@ import { LocalStorage } from '../localStorage';
   styleUrls: ['./app.student.add.css'],
 })
 export class StudentAddPage {
-  constructor(private localStorage: LocalStorage, private router: Router) {}
+  constructor(private router: Router, private localStorage: LocalStorage) {}
 
   firstNameValue: string = '';
   lastNameValue: string = '';
