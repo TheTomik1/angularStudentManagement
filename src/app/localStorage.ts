@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class LocalStorage {
-
   constructor() { }
 
   public setData(key: string, value: string) {
@@ -14,6 +13,7 @@ export class LocalStorage {
   public getData(key: string) {
     return localStorage.getItem(key);
   }
+  
   public removeData(key: string) {
     localStorage.removeItem(key);
   }
