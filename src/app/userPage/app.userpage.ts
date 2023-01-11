@@ -10,4 +10,7 @@ export class UserPage {
   constructor(private route: ActivatedRoute) {}
 
   currentUserName = this.route.snapshot.queryParams.id;
+  ngOnInit() {
+    alert(this.currentUserName)
+  }
 }
