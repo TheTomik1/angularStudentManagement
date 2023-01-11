@@ -6,7 +6,7 @@
 }
 
 #userPageCard {
-  animation: fadeIn 2s;
+  animation: fadeIn 1s;
 }
 
 @keyframes fadeIn {
