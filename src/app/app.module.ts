@@ -11,6 +11,7 @@ import { LogoutPage } from './logOutPage/app.logout';
 import { UserPage } from './userPage/app.userpage';
 import { StudentViewPage } from './studentsViewPage/app.students.view';
 import { StudentDetailPage } from './studentDetailPage/app.student.detail';
+import { StudentEditPage } from './studentEditPage/app.student.edit';
 import { StudentAddPage } from './studentAddPage/app.student.add';
 import { StudentDeletePage } from './studentDeletePage/app.student.delete';
 
@@ -20,7 +21,7 @@ import { AuthService } from './auth.service';
 @NgModule({
   imports: [BrowserModule, CommonModule, FormsModule, AppRoutingModule],
   providers: [AppComponent, LoggedInGuard, AuthService],
-  declarations: [AppComponent, InformationPage, LoginPage, LogoutPage, UserPage, StudentViewPage, StudentDetailPage, StudentAddPage, StudentDeletePage],
+  declarations: [AppComponent, InformationPage, LoginPage, LogoutPage, UserPage, StudentViewPage, StudentDetailPage, StudentEditPage, StudentAddPage, StudentDeletePage],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

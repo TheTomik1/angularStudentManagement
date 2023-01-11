@@ -7,6 +7,7 @@ import { LogoutPage } from './logOutPage/app.logout';
 import { UserPage } from './userPage/app.userpage';
 import { StudentViewPage } from './studentsViewPage/app.students.view';
 import { StudentDetailPage } from './studentDetailPage/app.student.detail';
+import { StudentEditPage } from './studentEditPage/app.student.edit';
 import { StudentAddPage } from './studentAddPage/app.student.add';
 import { StudentDeletePage } from './studentDeletePage/app.student.delete';
 
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'user/:name', component: UserPage, canActivate: [LoggedInGuard] },
   { path: 'viewstudents', component: StudentViewPage, canActivate: [LoggedInGuard] },
   { path: 'viewstudentdetail', component: StudentDetailPage, canActivate: [LoggedInGuard] },
+  { path: 'editstudent', component: StudentEditPage, canActivate: [LoggedInGuard]},
   { path: 'deletestudent', component: StudentDeletePage, canActivate: [LoggedInGuard] },
   { path: 'addstudent', component: StudentAddPage, canActivate: [LoggedInGuard] },
   { path: '**', component: InformationPage }
