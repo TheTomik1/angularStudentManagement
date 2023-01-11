@@ -11,6 +11,5 @@ import { AppComponent } from '../app.component';
 export class UserPage {
   constructor(private route: ActivatedRoute, private appComponent: AppComponent) {}
 
-  getUserNickname = this.route.snapshot.paramMap.get('id');
-  currentUserId = this.getUserNickname;
+  currentUserId = this.route.snapshot.paramMap.get('id');
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavigationStart, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { LocalStorage } from './localStorage';
 

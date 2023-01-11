@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { AuthService } from '../auth.service';
-import { LoginPage } from '../logInPage/app.login';
 
 @Component({
   selector: 'logout-page',
@@ -10,14 +9,16 @@ import { LoginPage } from '../logInPage/app.login';
   styleUrls: ['./app.logout.css'],
 })
 export class LogoutPage {
-  constructor(private loginPage: LoginPage, private router: Router, private authService: AuthService) {}
+  constructor(private router: Router, private route : ActivatedRoute ,private authService: AuthService) {}
+
+  getUserId = 0;
 
   processLogOut(agreedStatus: boolean): void {
     if (agreedStatus == true) {
       this.authService.logOut();
       this.router.navigate(['']);
     } else if (agreedStatus == false) {
-      this.loginPage.sendToUserPage(this.loginPage.userNickname);
+      this.router.navigate(["user", this.getUserId])
     }
   }
 }

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { PageNotFound } from './pageNotFound/app.not.found';
 import { LoginPage } from './logInPage/app.login';
 import { LogoutPage } from './logOutPage/app.logout';
 import { UserPage } from './userPage/app.userpage';
@@ -13,12 +14,13 @@ import { LoggedInGuard } from './logged.guard.service';
 
 const routes: Routes = [
   { path: 'login', component: LoginPage },
-  { path: 'logout', component: LogoutPage, canActivate: [LoggedInGuard] },
+  { path: 'logout/:id', component: LogoutPage, canActivate: [LoggedInGuard] },
   { path: 'user/:id', component: UserPage, canActivate: [LoggedInGuard] },
   { path: 'viewstudents', component: StudentViewPage, canActivate: [LoggedInGuard] },
   { path: 'viewstudentdetail', component: StudentDetailPage, canActivate: [LoggedInGuard] },
   { path: 'deletestudent', component: StudentDeletePage, canActivate: [LoggedInGuard] },
   { path: 'addstudent', component: StudentAddPage, canActivate: [LoggedInGuard] },
+  { path: '**', component: PageNotFound }
 ];
 
 @NgModule({
