@@ -1,0 +1,61 @@
+<div class="position-absolute top-50 start-50 translate-middle">
+<div id="studentEditCard" class="card mx-auto" style="width: 25rem">
+  <div class="card-body">
+    <div class="text-center">
+      <h4 class="card-title">Edit student</h4>
+      <p class="card-text">Here you can edit information about a specific student.</p>
+
+      <form (ngSubmit)="editStudent()">
+        <div class="form-group">
+          <label for="firstnameinput">First name</label>
+          <input [(ngModel)]="firstNameValue" name="firstnamefield" type="text" class="form-control" id="firstnameinput"/>
+
+          <label for="lastnameinput">Last name</label>
+          <input [(ngModel)]="lastNameValue" name="lastnamefield" type="text" class="form-control" id="lastnameinput"/>
+
+          <label>Class</label>
+          <select [(ngModel)]="classValue" name="class" class="form-control">
+            <option value="3.A">3.A</option>
+            <option value="3.B">3.B</option>
+            <option value="3.C">3.C</option>
+          </select>
+
+          <label for="birthdayinput">Birthday date</label>
+          <input [(ngModel)]="birthdayValue" name="birthdayValue" type="date" class="form-control" id="birthdayinput"/>
+          
+          <label>Field</label>
+          <select [(ngModel)]="fieldValue" name="field" class="form-control">
+            <option value="Programming">Programming</option>
+            <option value="Networking">Networking</option>
+            <option value="Artifical Intelligence">Articiial Intelligence</option>
+          </select>
+
+          <label>Gender</label>
+          <select [(ngModel)]="genderValue" name="gender" class="form-control">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+
+          <label for="markinput">Avarage mark percentage</label>
+          <input [(ngModel)]="markValue" name="markinput" type="number" min="0" max="100" class="form-control" id="markinput"/>
+
+          <label>Disabled</label>
+          <select [(ngModel)]="disabledValue" name="disabled" class="form-control">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+
+          <label for="rewardsinput">Rewards</label>
+          <input [(ngModel)]="rewardsValue" name="birthdayfield" type="text" class="form-control" id="rewardsinput"/>
+
+          <br>
+          <button type="submit" class="btn btn-success">Edit student</button>
+
+          <br><br>
+          <a routerLink="/viewstudents"><button class="btn btn-primary">Return to the student list</button></a>
+        </div>
+      </form>
+    </div>
+  </div>   
+</div>
+</div>

@@ -9,5 +9,5 @@ import { ActivatedRoute } from '@angular/router';
 export class UserPage {
   constructor(private route: ActivatedRoute) {}
 
-  currentUserName = this.route.snapshot.paramMap.get('name');
+  currentUserName = this.route.snapshot.queryParams.id;
 }

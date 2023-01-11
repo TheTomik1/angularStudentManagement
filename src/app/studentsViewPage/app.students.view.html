@@ -6,6 +6,7 @@
       <th scope="col">Last Name</th>
       <th scope="col">Class</th>
       <th scope="col">Study Field</th>
+      <th scope="col">Edit Student</th>
       <th scope="col">Details</th>
     </tr>
   </thead>
@@ -15,7 +16,7 @@
       <td>{{ student["2"] }}</td>
       <td>{{ student["3"] }}</td>
       <td>{{ student["6"] }}</td>
-      <td><a href="javascript:void(0);" (click)="sendToEdit(student['0'])">Details</a></td>
+      <td><a href="javascript:void(0);" (click)="sendToEdit(student['0'])">Edit</a></td>
       <td><a href="javascript:void(0);" (click)="sendToDetail(student['0'])">Details</a></td>
     </tr>
   </tbody>

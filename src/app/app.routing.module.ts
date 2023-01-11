@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'user/:name', component: UserPage, canActivate: [LoggedInGuard] },
   { path: 'viewstudents', component: StudentViewPage, canActivate: [LoggedInGuard] },
   { path: 'viewstudentdetail', component: StudentDetailPage, canActivate: [LoggedInGuard] },
-  { path: 'editstudent', component: StudentEditPage, canActivate: [LoggedInGuard]},
+  { path: 'editstudent', component: StudentEditPage},
   { path: 'deletestudent', component: StudentDeletePage, canActivate: [LoggedInGuard] },
   { path: 'addstudent', component: StudentAddPage, canActivate: [LoggedInGuard] },
   { path: '**', component: InformationPage }

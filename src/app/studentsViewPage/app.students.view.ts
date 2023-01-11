@@ -28,7 +28,7 @@ export class StudentViewPage {
   }
 
   sendToEdit(getKey: string): void {
-    this.router.navigate(['studentedit'], {queryParams: { id: getKey }});
+    this.router.navigate(['editstudent'], {queryParams: { id: getKey }});
   }
 
   allStudents: Array<string> = this.getAllStudents();

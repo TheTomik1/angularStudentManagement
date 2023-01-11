@@ -11,7 +11,7 @@ import { LocalStorage } from '../localStorage';
 export class StudentDetailPage {
   constructor(private localStorage: LocalStorage, private router: Router, private route: ActivatedRoute) {}
 
-  getStudentId = this.route.snapshot.queryParams.id;
+  getStudentId: string = this.route.snapshot.queryParams.id;
 
   getStudentInfo(studentId: string): Array<string> {
     let value = [];
