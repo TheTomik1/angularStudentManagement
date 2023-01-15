@@ -35,7 +35,6 @@ export class StudentEditPage {
   disabledValue: string = this.getStudentInfo(this.getStudentId)[8];
   rewardsValue: string = this.getStudentInfo(this.getStudentId)[9];
 
-  
   getAgeOutOfBirthday(getCurrentTime: Date, getBirthdayDate: Date): string {
     if (getBirthdayDate.toString() == "Invalid Date") {
       return "Not specified."
