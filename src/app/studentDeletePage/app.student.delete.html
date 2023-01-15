@@ -14,9 +14,10 @@
                 <label for="lastnameinput">Last name</label>
                 <input [(ngModel)]="lastNameValue" name="lastnamefield" type="text" class="form-control" id="lastnameinput"/>
                 
-                <label>I confirm that you understand this action cannot be undone</label>
+                <label>I understand that this action cannot be undone</label>
                 <select [(ngModel)]="confirmDelete" name="undone" class="form-control">
                   <option value="Yes">Yes</option>
+                  <option value="No">No</option>
                 </select>
 
                 <br>  
