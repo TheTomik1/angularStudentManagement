@@ -16,7 +16,7 @@ export class InformationPage {
   checkInitialization(): boolean {
     for (var i = 0; i < localStorage.length; i++) {
       var key = localStorage.key(i);
-      if (key == "adminteacher@gmail.com") {
+      if (key == "schoolteacher@gmail.com") {
         return true;
       }
     }
@@ -24,6 +24,6 @@ export class InformationPage {
   }
 
   addAdminTeacher(): void {
-    localStorage.setItem("adminteacher@gmail.com", "Password,admin")
+    localStorage.setItem("schoolteacher@gmail.com", "Password,teacher")
   }
 }
